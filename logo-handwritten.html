@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仁家坪新村 Logo - 手写仁字版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #FDF8F0;
+    padding: 3rem 2rem;
+    color: #1A1A1A;
+    min-height: 100vh;
+  }
+  .container { max-width: 1000px; margin:0 auto; }
+  h1 { text-align:center; color:#2D6A4F; font-size:2.5rem; margin-bottom:0.5rem; }
+  .subtitle { text-align:center; color:#4A4A4A; margin-bottom:3rem; font-size:0.95rem; }
+  .logo-preview {
+    background:#fff; border-radius:20px; padding:4rem 3rem;
+    text-align:center; box-shadow: 0 8px 40px rgba(45,106,79,0.1); margin-bottom:2rem;
+  }
+  
+  /* Main logo */
+  .logo-main {
+    width:300px; height:300px; border-radius:50%;
+    background: linear-gradient(135deg, #2D6A4F, #40916C);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+    margin: 0 auto 2rem;
+    box-shadow: 0 12px 40px rgba(45,106,79,0.35);
+  }
+  .logo-main::before {
+    content:''; position:absolute; bottom:0; left:0; right:0; height:35%;
+    background:linear-gradient(0deg, rgba(255,255,255,0.15) 0%, transparent 100%);
+  }
+  .logo-mountains {
+    position:absolute; bottom:10%; left:5%; right:5%; height:25%; opacity:0.18;
+  }
+  .logo-ren-img {
+    width:140px; height:auto;
+    filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    position:relative; z-index:1;
+  }
+  .logo-name {
+    font-size:22px; color:white; letter-spacing:4px;
+    opacity:0.9; position:relative; z-index:1; margin-top:6px;
+  }
+
+  /* Variants section */
+  .variants { display:flex; gap:3rem; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:2rem; padding-top:2rem; border-top:1px solid #eee; }
+  .variant { text-align:center; }
+  .variant p { margin-top:0.8rem; font-size:0.85rem; color:#4A4A4A; }
+  
+  .download-section { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top:2rem; }
+  .btn {
+    padding:0.8rem 2rem; border-radius:8px; border:none; font-size:0.95rem;
+    cursor:pointer; transition:all 0.3s; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;
+  }
+  .btn-primary { background:linear-gradient(135deg,#2D6A4F,#40916C); color:#fff; }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(45,106,79,0.3); }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>仁家坪新村 Logo</h1>
+  <p class="subtitle">山水仁心 · 手写"仁"字版</p>
+
+  <div class="logo-preview">
+    
+    <!-- 主Logo -->
+    <div class="logo-main" id="mainLogo">
+      <!-- 山水剪影 -->
+      <svg class="logo-mountains" viewBox="0 0 280 70" fill="none" preserveAspectRatio="none">
+        <path d="M0 70 Q30 20 60 45 Q100 15 140 38 Q180 20 220 42 Q260 28 280 48 L280 70 Z" fill="white"/>
+        <path d="M-10 70 Q40 30 80 52 Q120 25 160 46 Q200 32 240 50 Q270 42 290 55 L290 70 Z" fill="white" opacity="0.7"/>
+      </svg>
+      <!-- 手写仁字 -->
+      <img src="images/ren-character-transparent.png" class="logo-ren-img" alt="仁">
+      <div class="logo-name">仁家坪新村</div>
+    </div>
+
+    <!-- 变体 -->
+    <div class="variants">
+      <div class="variant">
+        <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#40916C);
+                    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <img src="images/ren-character-transparent.png" style="width:48px;filter:brightness(0)invert(1);" alt="">
+        </div>
+        <p>社交媒体头像<br/>（100×100）</p>
+      </div>
+
+      <div class="variant">
+        <div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(45,106,79,0.08);">
+          <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#40916C);
+                      display:flex;align-items:center;justify-content:center;">
+            <img src="images/ren-character-transparent.png" style="width:26px;filter:brightness(0)invert(1);" alt="">
+          </div>
+          <div>
+            <div style="font-family:'Noto Serif SC',serif;font-size:1.2rem;color:#2D6A4F;font-weight:700;">仁家坪新村</div>
+            <div style="font-size:0.72rem;color:#4A4A4A;letter-spacing:1px;margin-top:2px;">RENJIAPING NEW VILLAGE · 湖南省邵东市流泽镇</div>
+          </div>
+        </div>
+        <p>横版排版<br/>（文件抬头/导航栏）</p>
+      </div>
+    </div>
+
+    <div class="download-section">
+      <button onclick="dlSVG()" class="btn btn-primary">⬇ 下载 SVG</button>
+      <button onclick="dlPNG()" class="btn btn-primary">⬇ 下载 PNG (800×800)</button>
+      <button onclick="dlPNGSmall()" class="btn btn-primary">⬇ 下载 PNG (200×200)</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function dlSVG() {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+    <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D6A4F"/><stop offset="100%" stop-color="#40916C"/>
+    </linearGradient></defs>
+    <circle cx="200" cy="200" r="195" fill="url(#g)"/>
+    <ellipse cx="200" cy="320" rx="120" ry="8" fill="white" opacity="0.15"/>
+    <path d="M60 310Q120 240 160 270Q200 220 240 260Q280 230 340 290L340 400L60 400Z" fill="white" opacity="0.2"/>
+    <image href="images/ren-character-transparent.png" x="130" y="90" width="140" height="152"/>
+    <text x="200" y="295" font-family="'Noto Sans SC',sans-serif" font-size="26" fill="white" text-anchor="middle" letter-spacing="3" opacity="0.9">仁家坪新村</text>
+  </svg>`;
+  const blob = new Blob([svg],{type:'image/svg+xml'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = '仁家坪新村-logo.svg'; a.click();
+}
+
+function dlPNG(size=800) {
+  const el = document.getElementById('mainLogo');
+  // Use html2canvas approach - simpler: draw to canvas
+  const canvas = document.createElement('canvas');
+  canvas.width = size; canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  
+  // Draw gradient circle
+  const grd = ctx.createLinearGradient(0,0,size,size);
+  grd.addColorStop(0,'#2D6A4F'); grd.addColorStop(1,'#40916C');
+  ctx.beginPath(); ctx.arc(size/2,size/2,size*0.4875,0,Math.PI*2); ctx.fillStyle=grd; ctx.fill();
+  
+  // Draw mountains
+  ctx.globalAlpha = 0.18; ctx.fillStyle='white';
+  ctx.beginPath();
+  ctx.moveTo(size*0.05, size*0.85);
+  for(let i=0;i<=1;i+=0.05){
+    const x = i*size, y = size*(0.85 - Math.sin(i*Math.PI)*0.25 + Math.random()*0.02);
+    ctx.lineTo(x,y);
+  }
+  ctx.lineTo(size, size); ctx.lineTo(0, size); ctx.fill();
+  ctx.globalAlpha = 1;
+  
+  // Draw ren character image
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = function() {
+    const s = size * 0.35;
+    ctx.drawImage(img, (size-s)/2, size*0.23, s, s*1.086);
+    // Draw name
+    ctx.font = `bold ${size*0.065}px "Noto Sans SC", sans-serif`;
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.textAlign = 'center';
+    ctx.fillText('仁家坪新村', size/2, size*0.73);
+    
+    canvas.toBlob(function(blob){
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `仁家坪新村-logo-${size}x${size}.png`;
+      a.click(); setTimeout(()=>URL.revokeObjectURL(url),5000);
+    });
+  };
+  img.src = 'images/ren-character-transparent.png';
+}
+
+function dlPNGSmall(){ dlPNG(200); }
+function dlPNG(){ dlPNG(800); }
+</script>
+</body>
+</html>

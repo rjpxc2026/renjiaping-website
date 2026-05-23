@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D6A4F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#40916C;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Circular background -->
+  <circle cx="200" cy="200" r="195" fill="url(#bgGrad)" filter="url(#shadow)"/>
+  
+  <!-- Water ripple decoration at bottom -->
+  <ellipse cx="200" cy="320" rx="120" ry="8" fill="white" opacity="0.15"/>
+  <ellipse cx="200" cy="340" rx="140" ry="6" fill="white" opacity="0.1"/>
+  
+  <!-- Mountain silhouette -->
+  <path d="M 60 310 Q 120 240 160 270 Q 200 220 240 260 Q 280 230 340 290 L 340 400 L 60 400 Z" 
+        fill="white" opacity="0.2"/>
+  <path d="M 40 350 Q 100 280 150 310 Q 200 260 260 300 Q 320 270 360 320 L 360 400 L 40 400 Z" 
+        fill="white" opacity="0.12"/>
+  
+  <!-- 仁 character - handwritten style -->
+  <text x="200" y="210" 
+        font-family="'ZHI Mang Xing', 'Ma Shan Zheng', 'STKaiti', 'KaiTi', serif" 
+        font-size="160" 
+        fill="white" 
+        text-anchor="middle" 
+        font-weight="bold"
+        style="text-shadow: 0 4px 16px rgba(0,0,0,0.3);">仁</text>
+  
+  <!-- Village name below -->
+  <text x="200" y="280" 
+        font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif" 
+        font-size="28" 
+        fill="white" 
+        text-anchor="middle" 
+        opacity="0.9"
+        letter-spacing="4">仁家坪新村</text>
+</svg>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仁家坪新村 Logo 设计方案</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #FDF8F0;
+    padding: 3rem 2rem;
+    color: #1A1A1A;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: 'Noto Serif SC', serif;
+    text-align: center;
+    color: #2D6A4F;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  .subtitle {
+    text-align: center;
+    color: #4A4A4A;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+  }
+  .scheme {
+    background: #fff;
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(45,106,79,0.08);
+  }
+  .scheme-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.3rem;
+    color: #2D6A4F;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .scheme-desc {
+    color: #4A4A4A;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  .logo-showcase {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .logo-card {
+    text-align: center;
+  }
+  .logo-card p {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #4A4A4A;
+  }
+  
+  /* === 方案1：山水仁心 === */
+  .logo-1 {
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2D6A4F 0%, #40916C 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 8px 32px rgba(45,106,79,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-1::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(0deg, rgba(255,255,255,0.15) 0%, transparent 100%);
+  }
+  .logo-1-ren {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+  }
+  .logo-1-name {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.2em;
+    margin-top: 0.3rem;
+    position: relative;
+    z-index: 1;
+  }
+  /* Mountains decoration */
+  .logo-1-mountains {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    right: 10%;
+    height: 30%;
+    opacity: 0.2;
+  }
+  
+  /* === 方案2：田园徽章 === */
+  .logo-2 {
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #2D6A4F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(45,106,79,0.15);
+  }
+  .logo-2-inner {
+    text-align: center;
+  }
+  .logo-2-ren {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 3.5rem;
+    color: #2D6A4F;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .logo-2-sub {
+    font-size: 0.7rem;
+    color: #40916C;
+    letter-spacing: 0.15em;
+    margin-top: 0.3rem;
+  }
+  /* Decorative border pattern */
+  .logo-2::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 2px solid rgba(45,106,79,0.3);
+    border-radius: 50%;
+  }
+  
+  /* === 方案3：水墨飞白 === */
+  .logo-3 {
+    width: 200px; height: 200px;
+    background: #FDF8F0;
+    border: 3px solid #2D6A4F;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-3::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(45,106,79,0.03) 10px,
+      rgba(45,106,79,0.03) 20px
+    );
+  }
+  .logo-3-ren {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 5rem;
+    color: #2D6A4F;
+    font-weight: 900;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 0px rgba(45,106,79,0.1);
+  }
+  .logo-3-name {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    color: #1B4332;
+    letter-spacing: 0.3em;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+  }
+  
+  /* === 方案4：现代简约 === */
+  .logo-4 {
+    width: 200px; height: 200px;
+    background: linear-gradient(135deg, #2D6A4F 0%, #1B4332 100%);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(45,106,79,0.3);
+    position: relative;
+  }
+  .logo-4-ren {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4.5rem;
+    color: #fff;
+    font-weight: 900;
+    position: relative;
+  }
+  .logo-4-ren::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; left: -5px; right: -5px;
+    height: 3px;
+    background: #DAA520;
+    border-radius: 2px;
+  }
+  .logo-4-name {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.25em;
+    margin-top: 0.8rem;
+  }
+  
+  /* === 横版排版示例 === */
+  .logo-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(45,106,79,0.08);
+  }
+  .logo-horizontal-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2D6A4F, #40916C);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-horizontal-icon span {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 900;
+  }
+  .logo-horizontal-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-horizontal-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.3rem;
+    color: #2D6A4F;
+    font-weight: 700;
+  }
+  .logo-horizontal-sub {
+    font-size: 0.75rem;
+    color: #4A4A4A;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+  }
+  
+  .usage-note {
+    background: #F5EDE3;
+    border-left: 4px solid #2D6A4F;
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #1B4332;
+    line-height: 1.8;
+  }
+  .color-palette {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  .color-swatch {
+    text-align: center;
+  }
+  .color-swatch-box {
+    width: 60px; height: 60px;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  .color-swatch-label {
+    font-size: 0.75rem;
+    color: #4A4A4A;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>仁家坪新村 Logo 设计方案</h1>
+  <p class="subtitle">融合仁善文化 · 湘中丘陵风貌 · 乡村振兴理念</p>
+
+  <!-- 方案1 -->
+  <div class="scheme">
+    <div class="scheme-title">方案一：山水仁心</div>
+    <div class="scheme-desc">
+      以圆形徽章为基调，深绿渐变底色象征湘中丘陵的绿水青山，"仁"字居中彰显儒家仁爱文化，
+      底部山水剪影呼应村庄的丘陵地貌，整体传达"仁者乐山、仁者乐水"的哲学意境。
+    </div>
+    <div class="logo-showcase">
+      <div class="logo-card">
+        <div class="logo-1">
+          <svg class="logo-1-mountains" viewBox="0 0 160 60" fill="none">
+            <path d="M0 60 L20 30 L40 45 L60 20 L80 35 L100 15 L120 30 L140 25 L160 40 L160 60 Z" fill="white"/>
+          </svg>
+          <div class="logo-1-ren">仁</div>
+          <div class="logo-1-name">仁家坪新村</div>
+        </div>
+        <p>圆形徽章版（主logo）</p>
+      </div>
+    </div>
+    <div class="logo-horizontal">
+      <div class="logo-horizontal-icon"><span>仁</span></div>
+      <div class="logo-horizontal-text">
+        <div class="logo-horizontal-title">仁家坪新村</div>
+        <div class="logo-horizontal-sub">RENJIAPING NEW VILLAGE · 湖南省邵东市流泽镇</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 方案2 -->
+  <div class="scheme">
+    <div class="scheme-title">方案二：田园徽章</div>
+    <div class="scheme-desc">
+      白底绿边的圆形设计，体现乡村的纯净与自然，"仁"字以传统宋体呈现，
+      外圈双层边框蕴藏"家国同心"之意，适合印章、旗帜等场景使用。
+    </div>
+    <div class="logo-showcase">
+      <div class="logo-card">
+        <div class="logo-2">
+          <div class="logo-2-inner">
+            <div class="logo-2-ren">仁</div>
+            <div class="logo-2-sub">仁家坪新村</div>
+          </div>
+        </div>
+        <p>白底徽章版</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 方案3 -->
+  <div class="scheme">
+    <div class="scheme-title">方案三：水墨飞白</div>
+    <div class="scheme-desc">
+      汲取中国传统水墨画灵感，方印章形制，"仁"字以浓墨重笔书写，
+      底纹细腻纹理如田园阡陌，整体风格古朴典雅，契合乡村文化气质。
+    </div>
+    <div class="logo-showcase">
+      <div class="logo-card">
+        <div class="logo-3">
+          <div class="logo-3-ren">仁</div>
+          <div class="logo-3-name">仁家坪新村</div>
+        </div>
+        <p>水墨方印版</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 方案4 -->
+  <div class="scheme">
+    <div class="scheme-title">方案四：现代简约</div>
+    <div class="scheme-desc">
+      圆角方形配合渐变深绿，"仁"字厚重有力，底部金色装饰线增添尊贵感，
+      整体现代简约，适合数字媒体、APP图标等场景。
+    </div>
+    <div class="logo-showcase">
+      <div class="logo-card">
+        <div class="logo-4">
+          <div class="logo-4-ren">仁</div>
+          <div class="logo-4-name">仁家坪新村</div>
+        </div>
+        <p>现代方版</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 标准色 -->
+  <div class="scheme">
+    <div class="scheme-title">标准色彩</div>
+    <div class="scheme-desc">
+      Logo 主色调取自湘中自然山水，翠竹之绿象征生态宜居，金色点缀寓意丰收与希望。
+    </div>
+    <div class="color-palette">
+      <div class="color-swatch">
+        <div class="color-swatch-box" style="background: #2D6A4F;"></div>
+        <div class="color-swatch-label">主绿<br/>#2D6A4F</div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-box" style="background: #40916C;"></div>
+        <div class="color-swatch-label">辅助绿<br/>#40916C</div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-box" style="background: #1B4332;"></div>
+        <div class="color-swatch-label">深绿<br/>#1B4332</div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-box" style="background: #DAA520;"></div>
+        <div class="color-swatch-label">点缀金<br/>#DAA520</div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-box" style="background: #FDF8F0; border: 1px solid #ddd;"></div>
+        <div class="color-swatch-label">底色<br/>#FDF8F0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="usage-note">
+    <strong>💡 推荐使用方案：</strong>建议以<strong>方案一「山水仁心」</strong>为主logo，
+    其圆形徽章形式识别度高，深绿渐变体现生态宜居，山水剪影呼应湘中丘陵地貌。
+    配套横版排版可用于文件抬头、网站导航等场景。如需单色简化版，可采用方案二。
+  </div>
+</div>
+</body>
+</html>
