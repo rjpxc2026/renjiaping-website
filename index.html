@@ -834,6 +834,54 @@
     .carousel-dots { bottom: 8px; gap: 6px; }
     .carousel-dot { width: 7px; height: 7px; }
   }
+  
+  /* Music Player */
+  .music-player {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+  }
+  
+  .music-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--jade);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(45,106,79,0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .music-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(45,106,79,0.4);
+  }
+  
+  .music-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .music-btn.playing {
+    background: var(--gold);
+  }
+  
+  @media (max-width: 768px) {
+    .music-player {
+      bottom: 20px;
+      right: 20px;
+    }
+    .music-btn {
+      width: 44px;
+      height: 44px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1372,6 +1420,60 @@ document.querySelectorAll('.feature-card, .contact-card, .notice-board, .about-g
   carousel.addEventListener('mouseleave', startAutoplay);
 
   startAutoplay();
+})();
+</script>
+
+<!-- Background Music -->
+<div class="music-player" id="musicPlayer">
+  <button class="music-btn" id="musicBtn" aria-label="背景音乐">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+    </svg>
+  </button>
+</div>
+<audio id="bgMusic" loop>
+  <source src="music/background-music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Background Music Controller
+(function(){
+  const bgMusic = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  let isPlaying = false;
+  
+  // Load saved state
+  const savedState = localStorage.getItem('musicPlaying');
+  if (savedState === 'true') {
+    playMusic();
+  }
+  
+  musicBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      pauseMusic();
+    } else {
+      playMusic();
+    }
+  });
+  
+  function playMusic() {
+    bgMusic.play().then(() => {
+      isPlaying = true;
+      musicBtn.classList.add('playing');
+      localStorage.setItem('musicPlaying', 'true');
+    }).catch(e => {
+      console.log('Playback failed:', e);
+    });
+  }
+  
+  function pauseMusic() {
+    bgMusic.pause();
+    isPlaying = false;
+    musicBtn.classList.remove('playing');
+    localStorage.setItem('musicPlaying', 'false');
+  }
 })();
 </script>
 </body>
