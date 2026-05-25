@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>流泽镇国土空间规划（2021-2035年）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --jade: #2D6A4F; --jade-light: #40916C; --jade-dark: #1B4332;
+    --cream: #FDF8F0; --ink: #1A1A1A; --ink-light: #4A4A4A;
+  }
+  body { font-family: 'Noto Sans SC', sans-serif; color:var(--ink); background:var(--cream); line-height:2; }
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:1rem 2rem; background:rgba(253,248,240,0.96);
+    backdrop-filter:blur(12px); border-bottom:1px solid rgba(45,106,79,0.15);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .nav-brand { font-family:'Noto Serif SC',serif; font-size:1.3rem; font-weight:700; color:var(--jade-dark); display:flex; align-items:center; gap:0.5rem; text-decoration:none; }
+  .nav-brand img { width:32px; height:32px; border-radius:50%; object-fit:cover; }
+  .back-link { color:var(--jade); text-decoration:none; font-size:0.9rem; padding:0.4rem 1rem; border:1px solid var(--jade); border-radius:6px; transition:all 0.3s; }
+  .back-link:hover { background:var(--jade); color:#fff; }
+  .article-header { max-width:800px; margin:120px auto 0; padding:2rem 2rem 0; }
+  .article-meta { display:flex; gap:1.5rem; font-size:0.85rem; color:var(--ink-light); margin-bottom:1.5rem; flex-wrap:wrap; }
+  .article-meta span { display:flex; align-items:center; gap:0.3rem; }
+  .article-title { font-family:'Noto Serif SC',serif; font-size:1.8rem; color:var(--jade-dark); line-height:1.5; margin-bottom:1rem; text-align:center; }
+  .article-subtitle { font-size:1rem; color:var(--ink-light); text-align:center; margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:1px solid rgba(45,106,79,0.1); }
+  .article-body { max-width:800px; margin:0 auto; padding:2rem; font-size:1rem; color:var(--ink); }
+  .article-body p { margin-bottom:1.2rem; text-indent:2em; }
+  .article-body h3 { font-family:'Noto Serif SC',serif; font-size:1.25rem; color:var(--jade-dark); margin:2rem 0 1rem; padding-left:0.8rem; border-left:4px solid var(--jade); }
+  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:2rem 0; }
+  .info-card {
+    background:#fff; border-radius:8px; padding:1.2rem;
+    border:1px solid rgba(45,106,79,0.1); text-align:center;
+  }
+  .info-card h4 { font-size:0.9rem; color:var(--ink-light); margin-bottom:0.5rem; }
+  .info-card p { font-size:1.1rem; color:var(--jade-dark); font-weight:600; }
+  .download-box {
+    background:linear-gradient(135deg,rgba(45,106,79,0.08),rgba(64,145,108,0.08));
+    border-radius:12px; padding:2rem; margin:2rem 0;
+    border:2px solid rgba(45,106,79,0.2); text-align:center;
+  }
+  .download-box h3 { font-family:'Noto Serif SC',serif; color:var(--jade); margin-bottom:1rem; }
+  .download-btn {
+    display:inline-block; background:var(--jade); color:#fff;
+    padding:0.8rem 2rem; border-radius:8px; text-decoration:none;
+    font-weight:500; transition:all 0.3s; margin-top:1rem;
+  }
+  .download-btn:hover { background:var(--jade-dark); transform:translateY(-2px); box-shadow:0 4px 12px rgba(45,106,79,0.3); }
+  .highlight-box {
+    background:#fffef5; border:1px solid #e8d5a3; border-radius:8px;
+    padding:1.2rem 1.5rem; margin:1.5rem 0;
+  }
+  .highlight-box p { text-indent:0; color:var(--ink); margin-bottom:0.5rem; }
+  .toc-list { background:#fff; border-radius:8px; padding:1.5rem 2rem; margin:1.5rem 0; border:1px solid rgba(45,106,79,0.1); }
+  .toc-list ol { padding-left:1.5rem; }
+  .toc-list li { margin-bottom:0.6rem; font-size:0.95rem; color:var(--ink); }
+  .article-footer { max-width:800px; margin:3rem auto; padding:2rem; border-top:1px solid rgba(45,106,79,0.1); text-align:center; }
+  .article-footer .author { font-size:0.95rem; color:var(--ink-light); font-weight:600; }
+  .article-footer .date { font-size:0.85rem; color:var(--ink-light); margin-top:0.5rem; }
+  @media(max-width:768px) {
+    .article-title { font-size:1.4rem; }
+    .article-body { padding:1.5rem; font-size:0.92rem; }
+    .info-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <img src="../images/ren-character-transparent.png" alt="仁">
+    仁家坪新村
+  </a>
+  <a href="../index.html#news" class="back-link">← 返回首页</a>
+</nav>
+
+<div class="article-header">
+  <div class="article-meta">
+    <span>📅 2024年12月</span>
+    <span>📂 公示公告</span>
+    <span>✍️ 邵东市自然资源局</span>
+  </div>
+  <h1 class="article-title">流泽镇国土空间规划<br>（2021-2035年）</h1>
+  <div class="article-subtitle">湖南省地球物理地球化学调查所编制 | 邵东市自然资源局发布</div>
+</div>
+
+<div class="article-body">
+
+  <div class="info-grid">
+    <div class="info-card"><h4>规划期限</h4><p>2021-2035年</p></div>
+    <div class="info-card"><h4>编制单位</h4><p>湖南省地球物理<br>地球化学调查所</p></div>
+    <div class="info-card"><h4>发布单位</h4><p>邵东市自然资源局</p></div>
+    <div class="info-card"><h4>文件页数</h4><p>34 页</p></div>
+  </div>
+
+  <h3>规划概述</h3>
+  <p>流泽镇位于邵东市东北部，是湖南"3+5"城市群辐射湘西区域的重要节点，也是邵阳东部地区承接长株潭的重要门户。在邵东市国土空间规划中定位为<strong>重要的产业发展型乡镇、农产品主产区</strong>。</p>
+
+  <h3>乡镇发展优势</h3>
+  <div class="highlight-box">
+    <p>🌾 <strong>产业基础牢固</strong> — 玉竹、杨梅、金银花产业形成完整产业链，"中国玉竹之乡""流泽杨梅""富硒流泽"品牌效益显著</p>
+    <p>🚜 <strong>现代农业转型</strong> — 大力推广羊肚菌种植，采用"稻+菌"轮作模式，发展富硒康养及大健康产业</p>
+    <p>🏭 <strong>工业发展</strong> — 打火机产业和铝业形成完整产业链，促进当地经济发展</p>
+    <p>🛣️ <strong>区位交通便利</strong> — 两条省道穿过，人流物流信息流快速流动</p>
+  </div>
+
+  <h3>上位规划传导要点</h3>
+  <p>根据邵东市国土空间总体规划，流泽镇的<strong>三条控制线</strong>指标如下：</p>
+
+  <div class="info-grid">
+    <div class="info-card"><h4>耕地保护目标</h4><p>≥22234.74 亩</p></div>
+    <div class="info-card"><h4>永久基本农田</h4><p>≥20890.01 亩</p></div>
+    <div class="info-card"><h4>生态保护红线</h4><p>≥83.10 公顷</p></div>
+    <div class="info-card"><h4>城镇开发边界</h4><p>≤101.60 公顷</p></div>
+  </div>
+
+  <p>此外，全镇划定永久基本农田储备区面积不低于 <strong>139.2 亩</strong>，耕地后备资源面积 <strong>2407.5 亩</strong>。</p>
+
+  <h3>规划目录</h3>
+  <div class="toc-list">
+    <ol>
+      <li>规划概述（编制历程、问题与优势、机遇和挑战）</li>
+      <li>上位规划传导（总体空间格局、城镇体系、主体功能、产业发展）</li>
+      <li>主要规划内容（详细空间布局与管控要求）</li>
+    </ol>
+  </div>
+
+  <h3>编制历程</h3>
+  <p>本规划自2021年4月启动技术准备与初步调研，历经补充调研、方案编制、乡镇意见咨询论证、市级部门暨专家评审等阶段，于2024年完成最终成果。</p>
+
+  <div class="download-box">
+    <h3>📄 下载完整规划文件</h3>
+    <p style="margin:1rem 0; color:var(--ink-light);">点击下方按钮下载 PDF 原文（约 4.6 MB，共 34 页）</p>
+    <a href="../downloads/liuze-town-planning-2021-2035.pdf" download class="download-btn">⬇ 下载规划全文（PDF）</a>
+    <p style="margin-top:1rem; font-size:0.85rem; color:var(--ink-light);">文件格式：PDF | 文件大小：4.6 MB | 页数：34页</p>
+  </div>
+
+  <h3>说明</h3>
+  <p>本规划为流泽镇级国土空间总体规划，涵盖流泽镇全域范围。仁家坪新村作为流泽镇下辖行政村，其村庄建设、土地利用、产业发展等均需遵循本规划的总体要求和管控指标。村民如需了解更详细的规划内容，可下载完整 PDF 文件查阅。</p>
+
+</div>
+
+<div class="article-footer">
+  <div class="author">邵东市自然资源局 &nbsp;|&nbsp; 湖南省地球物理地球化学调查所</div>
+  <div class="date">发布时间：2024年12月</div>
+</div>
+
+</body>
+</html>
