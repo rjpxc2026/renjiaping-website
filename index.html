@@ -899,9 +899,9 @@
         <table class="group-table compact">
           <thead>
             <tr>
-              <th>组别</th><th>姓名</th><th>性别</th>
-              <th>组别</th><th>姓名</th><th>性别</th>
-              <th>组别</th><th>姓名</th><th>性别</th>
+              <th>组别</th><th>姓名</th><th>性别</th><th>电话</th>
+              <th>组别</th><th>姓名</th><th>性别</th><th>电话</th>
+              <th>组别</th><th>姓名</th><th>性别</th><th>电话</th>
             </tr>
           </thead>
           <tbody id="groupTableBody"></tbody>
@@ -1118,12 +1118,12 @@ document.querySelectorAll('.feature-card, .contact-card, .notice-board, .about-g
 // Generate 31 group leaders table
 (function(){
   const leaders = [
-    {name:'赵秋阳',sex:'男'},{name:'李端民',sex:'男'},{name:'赵尚秀',sex:'女'},{name:'邓益南',sex:'男'},{name:'赵银莲',sex:'女'},
-    {name:'凌春西',sex:'男'},{name:'赵安庆',sex:'男'},{name:'赵明信',sex:'男'},{name:'肖国兰',sex:'女'},{name:'曾仲华',sex:'男'},
-    {name:'曾跃文',sex:'男'},{name:'曾桂初',sex:'男'},{name:'曾连华',sex:'男'},{name:'曾新华',sex:'男'},{name:'王新生',sex:'男'},
-    {name:'曾迪民',sex:'男'},{name:'曾文琴',sex:'男'},{name:'曾端喜',sex:'男'},{name:'曾寿华',sex:'男'},{name:'李春香',sex:'女'},
-    {name:'赵新国',sex:'男'},{name:'蒋玉德',sex:'男'},{name:'申伟民',sex:'男'},{name:'尹双文',sex:'男'},{name:'尹友良',sex:'男'},
-    {name:'周君',sex:'女'},{name:'赵二仪',sex:'男'},{name:'曾安求',sex:'男'},{name:'曾新华',sex:'女'},{name:'尹付民',sex:'男'},{name:'贺赛群',sex:'女'}
+    {name:'赵秋阳',sex:'男',phone:'19873371672'},{name:'李端民',sex:'男',phone:'15211939056'},{name:'赵尚秀',sex:'女',phone:'19873908451'},{name:'邓益南',sex:'男',phone:'13170392780'},{name:'赵银莲',sex:'女',phone:'18985721947'},
+    {name:'凌春西',sex:'男',phone:'15773942550'},{name:'赵安庆',sex:'男',phone:'18975953168'},{name:'赵明信',sex:'男',phone:'13786921055'},{name:'肖国兰',sex:'女',phone:'13397597396'},{name:'曾仲华',sex:'男',phone:'15080912943'},
+    {name:'曾跃文',sex:'男',phone:'15399768698'},{name:'曾桂初',sex:'男',phone:'15675973064'},{name:'曾连华',sex:'男',phone:'15364794330'},{name:'曾新华',sex:'男',phone:'18207396965'},{name:'王新生',sex:'男',phone:'15180935895'},
+    {name:'曾迪民',sex:'男',phone:'18169232257'},{name:'曾文琴',sex:'男',phone:'15973941918'},{name:'曾端喜',sex:'男',phone:'19967955505'},{name:'曾寿华',sex:'男',phone:'15211952660'},{name:'李春香',sex:'女',phone:'18773975612'},
+    {name:'赵新国',sex:'男',phone:'13487984118'},{name:'蒋玉德',sex:'男',phone:'18528591530'},{name:'申伟民',sex:'男',phone:'18711961569'},{name:'尹双文',sex:'男',phone:'15211952924'},{name:'尹友良',sex:'男',phone:'13367399610'},
+    {name:'周君',sex:'女',phone:'18390796748'},{name:'赵二仪',sex:'男',phone:'17378115381'},{name:'曾安求',sex:'男',phone:'15607511578'},{name:'曾新华',sex:'女',phone:'15576402426'},{name:'尹付民',sex:'男',phone:'13327399838'},{name:'贺赛群',sex:'女',phone:'15367263369'}
   ];
   const tbody = document.getElementById('groupTableBody');
   if (!tbody) return;
@@ -1136,7 +1136,7 @@ document.querySelectorAll('.feature-card, .contact-card, .notice-board, .about-g
         tr.innerHTML += '<td></td><td></td><td></td>';
         continue;
       }
-      tr.innerHTML += '<td>第' + num + '组</td><td>' + leader.name + '</td><td>' + leader.sex + '</td>';
+      tr.innerHTML += '<td>第' + num + '组</td><td>' + leader.name + '</td><td>' + leader.sex + '</td><td>' + (leader.phone || '-') + '</td>';
     }
     tbody.appendChild(tr);
   }
