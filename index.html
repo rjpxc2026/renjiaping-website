@@ -882,6 +882,123 @@
       height: 44px;
     }
   }
+  
+  /* Gallery */
+  .gallery-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.3rem;
+    color: var(--jade-dark);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+  .gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(45,106,79,0.2);
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 8px 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .gallery-item:hover .gallery-caption {
+    opacity: 1;
+  }
+  .gallery-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 2000;
+    background: rgba(0,0,0,0.92);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .lightbox.active {
+    display: flex;
+  }
+  .lightbox-content {
+    max-width: 90vw; max-height: 85vh;
+    text-align: center;
+  }
+  .lightbox-content img {
+    max-width: 90vw; max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .lightbox-caption {
+    color: #ccc;
+    margin-top: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    position: fixed;
+    background: none; border: none;
+    color: #fff; font-size: 2.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    z-index: 2001;
+  }
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover { opacity: 1; }
+  .lightbox-close { top: 20px; right: 30px; }
+  .lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+  .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+  
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .gallery-large {
+      grid-column: span 2;
+      grid-row: span 1;
+      aspect-ratio: 16/9;
+    }
+  }
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -948,62 +1065,89 @@
       <h2 class="section-title">村情简介</h2>
       <div class="section-line"></div>
     </div>
-    <div class="about-grid">
-      <div class="about-img">
-        <div class="carousel" id="villageCarousel">
-          <div class="carousel-slides">
-            <div class="carousel-slide"><img src="images/carousel-spring.jpg" alt="春日村景"></div>
-            <div class="carousel-slide"><img src="images/carousel-summer-1.jpg" alt="夏日村景1"></div>
-            <div class="carousel-slide"><img src="images/carousel-summer-2.jpg" alt="夏日村景2"></div>
-            <div class="carousel-slide"><img src="images/carousel-summer-3.jpg" alt="夏日村景3"></div>
-            <div class="carousel-slide"><img src="images/carousel-autumn-1.jpg" alt="秋日村景1"></div>
-            <div class="carousel-slide"><img src="images/carousel-autumn-2.jpg" alt="秋日村景2"></div>
-            <div class="carousel-slide"><img src="images/carousel-autumn-3.jpg" alt="秋日村景3"></div>
-          </div>
-          <div class="carousel-label">仁家坪新村航拍</div>
-          <div class="carousel-dots"></div>
-          <button class="carousel-nav carousel-prev" aria-label="上一张">‹</button>
-          <button class="carousel-nav carousel-next" aria-label="下一张">›</button>
+    <div class="about-text" style="margin-bottom:3rem;">
+      <h3>富硒流泽 · 绝美仁家坪</h3>
+      <p>仁家坪新村坐落于邵东市东面流泽镇西南区域，北临六合亭、吉星村，南接高义、明兴村，西与七眼井、泉塘村毗邻，东连乾坤头、两兴村，各村相互毗邻、交融共生。全域土地总面积<strong>4.5平方公里</strong>。下辖<strong>31个村民小组</strong>，<strong>971户</strong>，户籍总人口<strong>3383人</strong>，是流泽镇人口规模较大、人居集中的行政村之一。</p>
+      <p>仁家坪新村交通区位十分便利，通勤出行便捷高效。村庄距离邵东市中心仅<strong>10公里</strong>，距流泽镇中心仅有<strong>2.2公里</strong>。村内生态禀赋得天独厚，自然环境清幽宜居。村内水土条件优良，是经过官方认证的<strong>天然富硒区域</strong>，也孕育了村庄独特的长寿底蕴。</p>
+      <p>依托优良的富硒生态环境，新村长寿氛围浓厚，是远近闻名的<strong>长寿村</strong>。村内80岁以上老人达<strong>120人</strong>，90岁以上并享受高龄补贴的老人有<strong>17人</strong>，更有<strong>2名百岁老人</strong>。村内赵青松老人现年<strong>111岁</strong>，是目前邵阳市年龄最高的长寿老人。</p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">971</div>
+          <div class="stat-label">户数（户）</div>
+        </div>
+        <div>
+          <div class="stat-num">3,383</div>
+          <div class="stat-label">人口（人）</div>
+        </div>
+        <div>
+          <div class="stat-num">31</div>
+          <div class="stat-label">村民小组（个）</div>
+        </div>
+        <div>
+          <div class="stat-num">120</div>
+          <div class="stat-label">80岁以上老人</div>
+        </div>
+        <div>
+          <div class="stat-num">111</div>
+          <div class="stat-label">最高寿老人（岁）</div>
+        </div>
+        <div>
+          <div class="stat-num">4.5</div>
+          <div class="stat-label">总面积（平方公里）</div>
         </div>
       </div>
-      <div class="about-text">
-        <h3>富硒流泽 · 绝美仁家坪</h3>
-        <p>仁家坪新村坐落于邵东市东面流泽镇西南区域，北临六合亭、吉星村，南接高义、明兴村，西与七眼井、泉塘村毗邻，东连乾坤头、两兴村，各村相互毗邻、交融共生。全域土地总面积<strong>4.5平方公里</strong>。下辖<strong>31个村民小组</strong>，<strong>971户</strong>，户籍总人口<strong>3383人</strong>，是流泽镇人口规模较大、人居集中的行政村之一。</p>
-        <p>仁家坪新村交通区位十分便利，通勤出行便捷高效。村庄距离邵东市中心仅<strong>10公里</strong>，距流泽镇中心仅有<strong>2.2公里</strong>。村内生态禀赋得天独厚，自然环境清幽宜居。村内水土条件优良，是经过官方认证的<strong>天然富硒区域</strong>，也孕育了村庄独特的长寿底蕴。</p>
-        <p>依托优良的富硒生态环境，新村长寿氛围浓厚，是远近闻名的<strong>长寿村</strong>。村内80岁以上老人达<strong>120人</strong>，90岁以上并享受高龄补贴的老人有<strong>17人</strong>，更有<strong>2名百岁老人</strong>。村内赵青松老人现年<strong>111岁</strong>，是目前邵阳市年龄最高的长寿老人。</p>
-        <div class="about-stats">
-          <div>
-            <div class="stat-num">971</div>
-            <div class="stat-label">户数（户）</div>
-          </div>
-          <div>
-            <div class="stat-num">3,383</div>
-            <div class="stat-label">人口（人）</div>
-          </div>
-          <div>
-            <div class="stat-num">31</div>
-            <div class="stat-label">村民小组（个）</div>
-          </div>
-          <div>
-            <div class="stat-num">120</div>
-            <div class="stat-label">80岁以上老人</div>
-          </div>
-          <div>
-            <div class="stat-num">111</div>
-            <div class="stat-label">最高寿老人（岁）</div>
-          </div>
-          <div>
-            <div class="stat-num">4.5</div>
-            <div class="stat-label">总面积（平方公里）</div>
-          </div>
-        </div>
-        <div class="honor-strip">
-          <div class="honor-badge">💎 天然富硒区</div>
-          <div class="honor-badge">🏥 卫生村</div>
-          <div class="honor-badge">🛡 平安村</div>
-          <div class="honor-badge">👴 长寿村</div>
-        </div>
+      <div class="honor-strip">
+        <div class="honor-badge">💎 天然富硒区</div>
+        <div class="honor-badge">🏥 卫生村</div>
+        <div class="honor-badge">🛡 平安村</div>
+        <div class="honor-badge">👴 长寿村</div>
       </div>
+    </div>
+    <div class="gallery-title">📸 村貌掠影</div>
+    <div class="gallery-grid" id="villageGallery">
+      <div class="gallery-item gallery-large" onclick="openLightbox(0)">
+        <img src="images/carousel-spring.jpg" alt="春日村景">
+        <div class="gallery-caption">春日村景</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="images/carousel-summer-1.jpg" alt="夏日村景1">
+        <div class="gallery-caption">夏日村景</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="images/carousel-summer-2.jpg" alt="夏日村景2">
+        <div class="gallery-caption">夏日风光</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="images/carousel-summer-3.jpg" alt="夏日村景3">
+        <div class="gallery-caption">盛夏景色</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="images/carousel-autumn-1.jpg" alt="秋日村景1">
+        <div class="gallery-caption">秋日村景</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="images/carousel-autumn-2.jpg" alt="秋日村景2">
+        <div class="gallery-caption">金秋风光</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="images/carousel-autumn-3.jpg" alt="秋日村景3">
+        <div class="gallery-caption">深秋景色</div>
+      </div>
+      <div class="gallery-item gallery-large" onclick="openLightbox(7)">
+        <img src="images/aerial-view.jpg" alt="村貌航拍">
+        <div class="gallery-caption">村貌航拍</div>
+      </div>
+    </div>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lightbox-close" aria-label="关闭">×</button>
+      <button class="lightbox-prev" onclick="event.stopPropagation();lightboxPrev()" aria-label="上一张">‹</button>
+      <button class="lightbox-next" onclick="event.stopPropagation();lightboxNext()" aria-label="下一张">›</button>
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img id="lightboxImg" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1474,6 +1618,58 @@ document.querySelectorAll('.feature-card, .contact-card, .notice-board, .about-g
     musicBtn.classList.remove('playing');
     localStorage.setItem('musicPlaying', 'false');
   }
+})();
+
+// Gallery Lightbox
+(function(){
+  const images = [
+    { src: 'images/carousel-spring.jpg', caption: '春日村景' },
+    { src: 'images/carousel-summer-1.jpg', caption: '夏日村景' },
+    { src: 'images/carousel-summer-2.jpg', caption: '夏日风光' },
+    { src: 'images/carousel-summer-3.jpg', caption: '盛夏景色' },
+    { src: 'images/carousel-autumn-1.jpg', caption: '秋日村景' },
+    { src: 'images/carousel-autumn-2.jpg', caption: '金秋风光' },
+    { src: 'images/carousel-autumn-3.jpg', caption: '深秋景色' },
+    { src: 'images/aerial-view.jpg', caption: '村貌航拍' }
+  ];
+  let current = 0;
+  
+  window.openLightbox = function(index) {
+    current = index;
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    img.src = images[index].src;
+    cap.textContent = images[index].caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+  
+  window.lightboxPrev = function() {
+    current = (current - 1 + images.length) % images.length;
+    document.getElementById('lightboxImg').src = images[current].src;
+    document.getElementById('lightboxCaption').textContent = images[current].caption;
+  };
+  
+  window.lightboxNext = function() {
+    current = (current + 1) % images.length;
+    document.getElementById('lightboxImg').src = images[current].src;
+    document.getElementById('lightboxCaption').textContent = images[current].caption;
+  };
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxPrev();
+    if (e.key === 'ArrowRight') lightboxNext();
+  });
 })();
 </script>
 </body>
