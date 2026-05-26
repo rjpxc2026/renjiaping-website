@@ -936,66 +936,133 @@
     }
   }
   
-  /* Gallery */
-  .gallery-title {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.3rem;
-    color: var(--jade-dark);
-    text-align: center;
+  /* ===== 村貌掠影画廊升级 ===== */
+  .gallery-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 1.5rem;
-    letter-spacing: 0.1em;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .gallery-counter {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    background: rgba(45,106,79,0.08);
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    border: 1px solid rgba(45,106,79,0.15);
+    letter-spacing: 0.05em;
   }
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
   .gallery-item {
     position: relative;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     aspect-ratio: 4/3;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  }
+  .gallery-item-inner {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1px rgba(45,106,79,0.1);
   }
   .gallery-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(45,106,79,0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(45,106,79,0.18), 0 0 0 1px rgba(45,106,79,0.06);
   }
   .gallery-item img {
     width: 100%; height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    display: block;
+    transition: transform 0.5s ease, filter 0.3s ease;
   }
   .gallery-item:hover img {
     transform: scale(1.08);
+    filter: brightness(1.05) saturate(1.1);
   }
   .gallery-caption {
     position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 8px 12px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    padding: 10px 12px 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.65));
     color: #fff;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0.05em;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  .gallery-item:hover .gallery-caption {
-    opacity: 1;
-  }
+  .gallery-item:hover .gallery-caption { opacity: 1; }
   .gallery-large {
     grid-column: span 2;
     grid-row: span 2;
   }
-  
-  /* Lightbox */
+  /* 缩略图横向滑动条 */
+  .gallery-carousel {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(45,106,79,0.1);
+  }
+  .gallery-carousel-label {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+  .gallery-carousel-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(45,106,79,0.25) transparent;
+    cursor: grab;
+  }
+  .gallery-carousel-track::-webkit-scrollbar { height: 3px; }
+  .gallery-carousel-track::-webkit-scrollbar-thumb {
+    background: rgba(45,106,79,0.25);
+    border-radius: 2px;
+  }
+  .gallery-carousel-thumb {
+    flex-shrink: 0;
+    width: 60px; height: 45px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    border: 2px solid transparent;
+  }
+  .gallery-carousel-thumb:hover { opacity: 0.9; transform: scale(1.05); }
+  .gallery-carousel-thumb.active {
+    opacity: 1;
+    border-color: var(--jade);
+    box-shadow: 0 0 0 1px rgba(45,106,79,0.25);
+  }
+  .gallery-carousel-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* Lightbox 升级 */
   .lightbox {
     display: none;
     position: fixed; inset: 0;
     z-index: 2000;
-    background: rgba(0,0,0,0.92);
+    background: rgba(10,10,10,0.96);
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+  }
     justify-content: center;
     flex-direction: column;
   }
@@ -1032,6 +1099,18 @@
   .lightbox-prev:hover,
   .lightbox-next:hover { opacity: 1; }
   .lightbox-close { top: 20px; right: 30px; }
+  .lightbox-counter {
+    position: fixed;
+    top: 24px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    background: rgba(0,0,0,0.4);
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    z-index: 2002;
+    pointer-events: none;
+  }
   .lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
   .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
   
@@ -1181,103 +1260,108 @@
 <!-- 村貌掠影 -->
 <section id="gallery">
   <div class="container">
-    <div class="section-header">
-      <p class="section-label">GALLERY</p>
-      <h2 class="section-title">村貌掠影</h2>
-      <div class="section-line"></div>
+    <div class="gallery-header">
+      <p class="section-label" style="margin:0">GALLERY</p>
+      <span class="gallery-counter">共 <strong id="galleryCount">22</strong> 张图片</span>
     </div>
     <div class="gallery-grid" id="villageGallery">
       <div class="gallery-item gallery-large" onclick="openLightbox(0)">
-        <img src="images/carousel-spring.jpg" alt="春日村景">
+        <div class="gallery-item-inner"><img src="images/carousel-spring.jpg" alt="春日村景"></div>
         <div class="gallery-caption">春日村景</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(1)">
-        <img src="images/carousel-summer-1.jpg" alt="夏日村景1">
+        <div class="gallery-item-inner"><img src="images/carousel-summer-1.jpg" alt="夏日村景1"></div>
         <div class="gallery-caption">夏日村景</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(2)">
-        <img src="images/carousel-summer-2.jpg" alt="夏日村景2">
+        <div class="gallery-item-inner"><img src="images/carousel-summer-2.jpg" alt="夏日村景2"></div>
         <div class="gallery-caption">夏日风光</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(3)">
-        <img src="images/carousel-summer-3.jpg" alt="夏日村景3">
+        <div class="gallery-item-inner"><img src="images/carousel-summer-3.jpg" alt="夏日村景3"></div>
         <div class="gallery-caption">盛夏景色</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(4)">
-        <img src="images/carousel-autumn-1.jpg" alt="秋日村景1">
+        <div class="gallery-item-inner"><img src="images/carousel-autumn-1.jpg" alt="秋日村景1"></div>
         <div class="gallery-caption">秋日村景</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(5)">
-        <img src="images/carousel-autumn-2.jpg" alt="秋日村景2">
+        <div class="gallery-item-inner"><img src="images/carousel-autumn-2.jpg" alt="秋日村景2"></div>
         <div class="gallery-caption">金秋风光</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(6)">
-        <img src="images/carousel-autumn-3.jpg" alt="秋日村景3">
+        <div class="gallery-item-inner"><img src="images/carousel-autumn-3.jpg" alt="秋日村景3"></div>
         <div class="gallery-caption">深秋景色</div>
       </div>
       <div class="gallery-item gallery-large" onclick="openLightbox(7)">
-        <img src="images/aerial-view.jpg" alt="村貌航拍">
+        <div class="gallery-item-inner"><img src="images/aerial-view.jpg" alt="村貌航拍"></div>
         <div class="gallery-caption">村貌航拍</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(8)">
-        <img src="images/DJI_0008.JPG" alt="梯田春色">
+        <div class="gallery-item-inner"><img src="images/DJI_0008.JPG" alt="梯田春色"></div>
         <div class="gallery-caption">梯田春色</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(9)">
-        <img src="images/DJI_0005.JPG" alt="远景全景">
+        <div class="gallery-item-inner"><img src="images/DJI_0005.JPG" alt="远景全景"></div>
         <div class="gallery-caption">远景全景</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(10)">
-        <img src="images/DJI_0004.JPG" alt="村庄全景">
+        <div class="gallery-item-inner"><img src="images/DJI_0004.JPG" alt="村庄全景"></div>
         <div class="gallery-caption">村庄全景</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(11)">
-        <img src="images/DJI_0007.JPG" alt="产业园区">
+        <div class="gallery-item-inner"><img src="images/DJI_0007.JPG" alt="产业园区"></div>
         <div class="gallery-caption">产业园区</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(12)">
-        <img src="images/DJI_0002.JPG" alt="民居集中区">
+        <div class="gallery-item-inner"><img src="images/DJI_0002.JPG" alt="民居集中区"></div>
         <div class="gallery-caption">民居集中区</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(13)">
-        <img src="images/DJI_0003.JPG" alt="村东风貌">
+        <div class="gallery-item-inner"><img src="images/DJI_0003.JPG" alt="村东风貌"></div>
         <div class="gallery-caption">村东风貌</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(14)">
-        <img src="images/DJI_0088.JPG" alt="交通枢纽">
+        <div class="gallery-item-inner"><img src="images/DJI_0088.JPG" alt="交通枢纽"></div>
         <div class="gallery-caption">交通枢纽</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(15)">
-        <img src="images/DJI_0144.JPG" alt="光伏油菜花">
+        <div class="gallery-item-inner"><img src="images/DJI_0144.JPG" alt="光伏油菜花"></div>
         <div class="gallery-caption">光伏油菜花</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(16)">
-        <img src="images/DJI_0265.JPG" alt="全村俯瞰">
+        <div class="gallery-item-inner"><img src="images/DJI_0265.JPG" alt="全村俯瞰"></div>
         <div class="gallery-caption">全村俯瞰</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(17)">
-        <img src="images/DJI_0276.JPG" alt="田野风光">
+        <div class="gallery-item-inner"><img src="images/DJI_0276.JPG" alt="田野风光"></div>
         <div class="gallery-caption">田野风光</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(18)">
-        <img src="images/DJI_0283.JPG" alt="稻田一隅">
+        <div class="gallery-item-inner"><img src="images/DJI_0283.JPG" alt="稻田一隅"></div>
         <div class="gallery-caption">稻田一隅</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(19)">
-        <img src="images/DJI_0287.JPG" alt="池塘倒影">
+        <div class="gallery-item-inner"><img src="images/DJI_0287.JPG" alt="池塘倒影"></div>
         <div class="gallery-caption">池塘倒影</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(20)">
-        <img src="images/DJI_0396.JPG" alt="丘陵地貌">
+        <div class="gallery-item-inner"><img src="images/DJI_0396.JPG" alt="丘陵地貌"></div>
         <div class="gallery-caption">丘陵地貌</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(21)">
-        <img src="images/DJI_0420.JPG" alt="村容新貌">
+        <div class="gallery-item-inner"><img src="images/DJI_0420.JPG" alt="村容新貌"></div>
         <div class="gallery-caption">村容新貌</div>
       </div>
+    <!-- 缩略图滑动条 -->
+    <div class="gallery-carousel">
+      <div class="gallery-carousel-label">▸ 快速定位</div>
+      <div class="gallery-carousel-track" id="galleryCarouselTrack"></div>
+    </div>
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
       <button class="lightbox-close" aria-label="关闭">×</button>
+      <div class="lightbox-counter" id="lightboxCounter"></div>
       <button class="lightbox-prev" onclick="event.stopPropagation();lightboxPrev()" aria-label="上一张">‹</button>
       <button class="lightbox-next" onclick="event.stopPropagation();lightboxNext()" aria-label="下一张">›</button>
       <div class="lightbox-content" onclick="event.stopPropagation()">
@@ -1814,10 +1898,19 @@ document.querySelectorAll('.feature-card, .contact-card, .notice-board, .about-g
     const lb = document.getElementById('lightbox');
     const img = document.getElementById('lightboxImg');
     const cap = document.getElementById('lightboxCaption');
+    const counter = document.getElementById('lightboxCounter');
     img.src = images[index].src;
     cap.textContent = images[index].caption;
+    if (counter) counter.textContent = (index + 1) + ' / ' + images.length;
     lb.classList.add('active');
     document.body.style.overflow = 'hidden';
+    // 同步缩略图高亮
+    document.querySelectorAll('.gallery-carousel-thumb').forEach((t, i) => {
+      t.classList.toggle('active', i === index);
+    });
+    // 滚动缩略图到可见
+    const thumb = document.querySelectorAll('.gallery-carousel-thumb')[index];
+    if (thumb) thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   };
   
   window.closeLightbox = function() {
@@ -1827,14 +1920,32 @@ document.querySelectorAll('.feature-card, .contact-card, .notice-board, .about-g
   
   window.lightboxPrev = function() {
     current = (current - 1 + images.length) % images.length;
-    document.getElementById('lightboxImg').src = images[current].src;
-    document.getElementById('lightboxCaption').textContent = images[current].caption;
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    const counter = document.getElementById('lightboxCounter');
+    img.src = images[current].src;
+    cap.textContent = images[current].caption;
+    if (counter) counter.textContent = (current + 1) + ' / ' + images.length;
+    document.querySelectorAll('.gallery-carousel-thumb').forEach((t, i) => {
+      t.classList.toggle('active', i === current);
+    });
+    const thumb = document.querySelectorAll('.gallery-carousel-thumb')[current];
+    if (thumb) thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   };
   
   window.lightboxNext = function() {
     current = (current + 1) % images.length;
-    document.getElementById('lightboxImg').src = images[current].src;
-    document.getElementById('lightboxCaption').textContent = images[current].caption;
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    const counter = document.getElementById('lightboxCounter');
+    img.src = images[current].src;
+    cap.textContent = images[current].caption;
+    if (counter) counter.textContent = (current + 1) + ' / ' + images.length;
+    document.querySelectorAll('.gallery-carousel-thumb').forEach((t, i) => {
+      t.classList.toggle('active', i === current);
+    });
+    const thumb = document.querySelectorAll('.gallery-carousel-thumb')[current];
+    if (thumb) thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   };
   
   // Keyboard navigation
@@ -1845,6 +1956,18 @@ document.querySelectorAll('.feature-card, .contact-card, .notice-board, .about-g
     if (e.key === 'ArrowLeft') lightboxPrev();
     if (e.key === 'ArrowRight') lightboxNext();
   });
+
+  // 初始化缩略图滑动条
+  const track = document.getElementById('galleryCarouselTrack');
+  if (track && typeof images !== 'undefined') {
+    images.forEach((img, i) => {
+      const thumb = document.createElement('div');
+      thumb.className = 'gallery-carousel-thumb';
+      thumb.innerHTML = '<img src="' + img.src + '" alt="' + img.caption + '" loading="lazy">';
+      thumb.addEventListener('click', () => openLightbox(i));
+      track.appendChild(thumb);
+    });
+  }
 })();
 </script>
 </body>
