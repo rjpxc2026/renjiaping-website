@@ -743,6 +743,59 @@
     .ht-desc { font-size: 0.8rem; }
   }
   
+  /* === Mobile Performance Optimization === */
+  @media (max-width: 768px) {
+    /* Disable/reduce animations for better performance */
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.15s !important;
+    }
+    
+    /* Gallery image optimization - load smaller images */
+    .gallery-item { aspect-ratio: 1/1; }
+    .gallery-large { aspect-ratio: 16/9; }
+    
+    /* Table horizontal scroll */
+    .group-table-wrap { -webkit-overflow-scrolling: touch; }
+    
+    /* News grid single column on mobile */
+    .news-grid { grid-template-columns: 1fr; }
+    .news-column { margin-bottom: 1rem; }
+    
+    /* Better touch targets */
+    .notice-item { padding: 0.8rem 0; min-height: 44px; }
+    
+    /* Reduce padding */
+    .container { padding: 0 0.8rem; }
+    .section-header { margin-bottom: 1rem; }
+    
+    /* Honor badges wrap */
+    .honor-badges { flex-wrap: wrap; gap: 0.5rem; }
+    .honor-badge { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further optimization for small phones */
+    section { padding: 2rem 0.8rem; }
+    .hero { min-height: 60vh; }
+    .hero-content h1 { font-size: 1.6rem; }
+    .hero-sub { font-size: 0.85rem; }
+    
+    /* Compact stats */
+    .about-stats { gap: 0.5rem; }
+    .stat-item { padding: 0.5rem; }
+    .stat-item h3 { font-size: 1.2rem; }
+    .stat-item p { font-size: 0.7rem; }
+    
+    /* Smaller gallery items */
+    .gallery-grid { gap: 6px; }
+    .gallery-caption { font-size: 0.7rem; padding: 4px 6px; }
+    
+    /* Hide non-essential elements on very small screens */
+    .section-label { display: none; }
+  }
+  
   /* Mobile Menu Button */
   .mobile-menu-btn {
     display: none;
@@ -981,6 +1034,17 @@
   .lightbox-close { top: 20px; right: 30px; }
   .lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
   .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+  
+  /* Lightbox Mobile Optimization */
+  @media (max-width: 768px) {
+    .lightbox { padding: 1rem; }
+    .lightbox-content img { max-width: 100vw; max-height: 70vh; }
+    .lightbox-caption { font-size: 0.9rem; margin-top: 8px; }
+    .lightbox-close, .lightbox-prev, .lightbox-next { font-size: 2rem; padding: 10px; }
+    .lightbox-close { top: 10px; right: 15px; }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+  }
   
   @media (max-width: 768px) {
     .gallery-grid {
