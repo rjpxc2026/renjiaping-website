@@ -647,7 +647,7 @@
   @media (max-width: 900px) {
     .mg5 { grid-template-columns: repeat(3, 1fr); }
     .mg6 { grid-template-columns: repeat(2, 1fr); }
-    .news-grid { grid-template-columns: 1fr; }
+    .news-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
     /* Navigation */
@@ -675,7 +675,7 @@
     .stat-item p { font-size: 0.75rem; }
     
     /* News Section */
-    .news-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .news-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
     .news-header h3 { font-size: 1rem; }
     .news-list li { font-size: 0.85rem; padding: 0.6rem 0; }
     .news-featured h4 { font-size: 1rem; }
@@ -745,30 +745,15 @@
   
   /* === Mobile Performance Optimization === */
   @media (max-width: 768px) {
-    /* Disable/reduce animations for better performance */
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.15s !important;
-    }
-    
-    /* Gallery image optimization - load smaller images */
+    /* Gallery image optimization */
     .gallery-item { aspect-ratio: 1/1; }
     .gallery-large { aspect-ratio: 16/9; }
     
     /* Table horizontal scroll */
     .group-table-wrap { -webkit-overflow-scrolling: touch; }
     
-    /* News grid single column on mobile */
-    .news-grid { grid-template-columns: 1fr; }
-    .news-column { margin-bottom: 1rem; }
-    
     /* Better touch targets */
     .notice-item { padding: 0.8rem 0; min-height: 44px; }
-    
-    /* Reduce padding */
-    .container { padding: 0 0.8rem; }
-    .section-header { margin-bottom: 1rem; }
     
     /* Honor badges wrap */
     .honor-badges { flex-wrap: wrap; gap: 0.5rem; }
@@ -777,8 +762,6 @@
   
   @media (max-width: 480px) {
     /* Further optimization for small phones */
-    section { padding: 2rem 0.8rem; }
-    .hero { min-height: 60vh; }
     .hero-content h1 { font-size: 1.6rem; }
     .hero-sub { font-size: 0.85rem; }
     
@@ -791,9 +774,6 @@
     /* Smaller gallery items */
     .gallery-grid { gap: 6px; }
     .gallery-caption { font-size: 0.7rem; padding: 4px 6px; }
-    
-    /* Hide non-essential elements on very small screens */
-    .section-label { display: none; }
   }
   
   /* Mobile Menu Button */
