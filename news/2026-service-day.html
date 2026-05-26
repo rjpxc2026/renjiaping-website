@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>仁家坪新村便民服务日——贴心服务零距离 - 仁家坪新村</title>
+  <title>便民服务日，温暖进乡村——仁家坪新村便民服务日活动纪实 - 仁家坪新村</title>
   <link rel="stylesheet" href="../style.css">
   <style>
     .article-hero {
       width: 100%;
-      max-height: 420px;
+      max-height: 440px;
       object-fit: cover;
       border-radius: 10px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       box-shadow: 0 4px 20px rgba(45,106,79,0.12);
     }
     .article-meta {
@@ -25,44 +25,100 @@
     }
     .article-meta span { display: flex; align-items: center; gap: 0.35rem; }
     .article-body h2 {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: var(--jade);
-      margin: 2rem 0 1rem;
+      margin: 2rem 0 0.9rem;
       padding-left: 0.8rem;
       border-left: 4px solid var(--jade);
     }
     .article-body p {
       text-indent: 2em;
       line-height: 2;
+      margin-bottom: 0.9rem;
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+    .service-gallery {
+      margin: 2rem 0;
+    }
+    .gallery-title {
+      font-size: 1rem;
+      color: var(--ink-light);
+      text-align: center;
       margin-bottom: 1rem;
-      color: var(--ink);
-      font-size: 1.05rem;
+      font-weight: normal;
     }
-    .service-highlight {
-      background: linear-gradient(135deg, rgba(45,106,79,0.06), rgba(45,106,79,0.02));
-      border-radius: 10px;
-      padding: 1.5rem 2rem;
-      margin: 1.5rem 0;
-      border: 1px solid rgba(45,106,79,0.1);
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
     }
-    .service-highlight h3 {
-      color: var(--jade);
-      font-size: 1.05rem;
-      margin-bottom: 0.8rem;
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .service-highlight ul {
-      list-style: none;
-      padding: 0;
+    .gallery-grid img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 4px 16px rgba(45,106,79,0.2);
     }
-    .service-highlight li {
-      padding: 0.35rem 0;
-      color: var(--ink);
-      font-size: 0.98rem;
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
-    .service-highlight li::before {
-      content: "✅ ";
-      margin-right: 0.3rem;
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
     }
+    .lightbox-caption {
+      color: #fff;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+      padding: 0 16px;
+      user-select: none;
+      background: none;
+      border: none;
+    }
+    .lightbox-nav:hover { opacity: 1; }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -75,6 +131,7 @@
     }
     .back-link:hover { gap: 0.8rem; }
     @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
       .article-hero { border-radius: 6px; }
       .article-body p { font-size: 1rem; }
     }
@@ -101,7 +158,7 @@
     <a href="../index.html#news" class="back-link">← 返回村务要闻</a>
 
     <p class="section-label">VILLAGE NEWS</p>
-    <h1 class="section-title" style="font-size:1.6rem;text-align:left;">仁家坪新村便民服务日——贴心服务零距离</h1>
+    <h1 class="section-title" style="font-size:1.6rem;text-align:left;">便民服务日，温暖进乡村</h1>
 
     <div class="article-meta">
       <span>📅 2026年5月26日</span>
@@ -109,49 +166,57 @@
       <span>✍️ 仁家坪新村村委会</span>
     </div>
 
-    <!-- 若已有活动图片，可放在此处 -->
-    <!-- <img class="article-hero" src="../images/service-day.jpg" alt="便民服务日活动现场"> -->
+    <img class="article-hero" src="../images/service-day-poster.jpg" alt="便民服务日活动现场">
 
-    <div class="article-video">
-      <video controls preload="cover" poster="../images/service-day-poster.jpg" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(45,106,79,0.12);">
-        <source src="../videos/renjiaping-service-day.mp4" type="video/mp4">
-        您的浏览器不支持视频播放，请<a href="../videos/renjiaping-service-day.mp4" download>下载视频</a>观看。
-      </video>
+    <div class="article-body">
+      <p>初夏时节，暖意融融。仁家坪新村村委会大院内人头攒动、热闹非凡——这一天，"便民服务日"活动如期而至，将贴心服务送到村民家门口，把温暖送进千家万户。</p>
+
+      <h2>领导致辞，寄语民生</h2>
+      <p>活动在雄壮的氛围中拉开帷幕。村党总支部书记邓斌在致辞中表示，民生无小事，枝叶总关情。便民服务日是村"两委"践行为民宗旨、办好民生实事的重要举措，今后将持续深化，让每一位村民都能感受到党和政府的关怀与温暖。</p>
+
+      <h2>多元服务，诚意满满</h2>
+      <p>活动现场设立了多个服务展位，涵盖便民缝纫、健康义诊、免费理发等贴近村民生活需求的服务内容。工作人员与志愿者们各司其职，热情接待每一位到来的村民，用实际行动诠释着"奉献、友爱、互助、进步"的志愿精神。</p>
+      <p>在便民缝纫服务台前，志愿者熟练地操作着缝纫机，为村民缝补衣物、修整裤脚，收费低廉却服务周到；在健康义诊区，医护人员耐心为老人们测量血压、检测血糖，一一记录数据，并给出科学的健康建议；在免费理发点前，理发师手艺娴熟、精神抖擞，前来理发的老人们理完发后精神面貌焕然一新，连连称赞。</p>
+
+      <h2>志愿力量，温暖人心</h2>
+      <p>活动现场，身着"邵东"字样红马甲的志愿者们格外引人注目。他们穿梭于各个服务台之间，或帮助老人填写资料，或搀扶行动不便者落座，或为等候的村民递上一杯热茶……每一个忙碌的身影，都是乡村文明最生动的注脚。"我们志愿者便民日，就是想实实在在帮大家做点事。"一位女志愿者代表如是说。</p>
+
+      <h2>以心换心，口碑相传</h2>
+      <p>"这个便民服务日搞得好！缝纫、量血压、剪头发，全是老百姓用得上的！"一位村民竖起大拇指说，"以前这些事都要跑到镇上去，现在直接到家门口来了，真是太方便了！"活动现场笑声不断、好评如潮，温暖在交谈中传递，在笑容里流淌。</p>
+    </div>
+
+    <!-- 现场照片集 -->
+    <div class="service-gallery">
+      <p class="gallery-title">📷 活动现场 · 点击图片可放大</p>
+      <div class="gallery-grid" id="galleryGrid">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/Vmo5kM"    alt="便民服务日现场"         data-caption="便民服务日活动现场"                  loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/tgABam"  alt="便民缝纫服务"           data-caption="便民缝纫服务 · 针线间传递温暖"        loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/HubNnI"  alt="健康义诊服务"           data-caption="健康义诊 · 守护村民健康"              loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/bJfSYG"  alt="健康义诊血糖检测"       data-caption="健康义诊 · 测血糖 · 暖心关怀"        loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/kWCjfe"  alt="免费理发服务"           data-caption="免费理发 · 焕然一新"                  loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/ttdb3U"  alt="村支书致辞"             data-caption="村党总支部书记邓斌致辞"              loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/MCPk0A"  alt="志愿者代表发言"         data-caption="志愿者代表发言"                      loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/3Q1UWr"  alt="便民服务日活动现场"     data-caption="便民服务日 · 温暖进乡村"              loading="lazy">
+      </div>
     </div>
 
     <div class="article-body">
-      <p>为进一步深化"我为群众办实事"实践活动，打通服务群众的"最后一公里"，仁家坪新村党总支部、村民委员会于近日组织开展"便民服务日"主题活动。活动以"贴心服务零距离"为宗旨，将各类便民服务送到村民家门口，切实提升村民的获得感、幸福感和安全感。</p>
-
-      <h2>多元服务，一站式办理</h2>
-      <p>本次便民服务日设立了多个服务台，涵盖医保社保咨询、户籍业务代办、惠农政策解读、法律援助指引、水电气费缴纳指引等贴近村民日常生活的服务内容。村委会工作人员及志愿者现场坐班，耐心解答村民疑问，协助办理相关业务，真正实现"数据多跑路，群众少跑腿"。</p>
-
-      <div class="service-highlight">
-        <h3>本次便民服务日主要服务内容</h3>
-        <ul>
-          <li>城乡居民基本医疗保险政策咨询与缴费指引</li>
-          <li>养老保险待遇资格认证上门办理</li>
-          <li>退役军人优待证申领政策解读</li>
-          <li>低保、特困供养申请流程讲解</li>
-          <li>农村宅基地审批政策答疑</li>
-          <li>反诈宣传与安全防范知识普及</li>
-          <li>水电气等生活缴费协助办理</li>
-        </ul>
-      </div>
-
-      <h2>走进家门，服务上门</h2>
-      <p>针对村内行动不便的老年人、残疾人等特殊群体，村委会特别组织了"上门服务小分队"，由村干部带队，主动入户走访，提供认证代办、政策宣讲等个性化服务，确保便民服务不落一户、不漏一人。</p>
-
-      <h2>村民点赞，口碑载道</h2>
-      <p>"以前办个认证还要跑到镇上，现在村里直接帮我们办，真是太方便了！"一位刚办完养老保险认证的老人竖起大拇指连连称赞。活动现场气氛热烈，村民们纷纷表示，这样的便民活动接地气、暖人心，希望以后能常态化开展。</p>
-
-      <h2>长效机制，持续发力</h2>
-      <p>仁家坪新村党总支部书记邓斌表示，便民服务日不是"一阵风"，而是常态化工作机制。下一步，村委会将每月定期举办便民服务活动，不断拓展服务内容、优化服务流程，把实事办到群众心坎上，奋力打造温暖和谐的美丽乡村新样板。</p>
+      <p style="margin-top:1.5rem;">下一步，仁家坪新村将持续深化便民服务机制，常态化开展志愿服务活动，不断拓宽服务领域、提升服务质量，让便民服务真正成为连接村"两委"与村民之间的连心桥，共建宜居宜业、和美幸福的新农村。</p>
 
       <p style="margin-top:2rem;color:var(--ink-light);font-size:0.92rem;text-indent:0;">
-        📷 更多活动精彩瞬间，请关注仁家坪新村官方抖音号 <strong>#流泽</strong> <strong>#仁家坪新</strong>
+        🎬 更多精彩，请关注仁家坪新村官方抖音号 <strong>#流泽</strong> <strong>#仁家坪</strong>
       </p>
     </div>
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lbClose">×</span>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lbNext">›</button>
+    <img id="lbImg" src="" alt="">
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -165,5 +230,44 @@
       <div class="footer-copy">© 2026 邵东市流泽镇仁家坪新村 版权所有</div>
     </div>
   </footer>
+
+  <script>
+    // Lightbox
+    var images = Array.from(document.querySelectorAll('.gallery-grid img'));
+    var current = 0;
+
+    function showImage(index) {
+      current = (index + images.length) % images.length;
+      document.getElementById('lbImg').src = images[current].src;
+      document.getElementById('lbCaption').textContent = images[current].dataset.caption || '';
+    }
+
+    images.forEach(function(img, i) {
+      img.addEventListener('click', function() { showImage(i); });
+    });
+
+    document.getElementById('lbClose').addEventListener('click', function() {
+      document.getElementById('lightbox').classList.remove('active');
+    });
+
+    document.getElementById('lbPrev').addEventListener('click', function() {
+      showImage(current - 1);
+    });
+
+    document.getElementById('lbNext').addEventListener('click', function() {
+      showImage(current + 1);
+    });
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) document.getElementById('lightbox').classList.remove('active');
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') showImage(current - 1);
+      if (e.key === 'ArrowRight') showImage(current + 1);
+      if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+    });
+  </script>
 </body>
 </html>
