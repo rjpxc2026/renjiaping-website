@@ -38,15 +38,12 @@
       color: var(--ink);
       font-size: 1.05rem;
     }
-    .service-gallery {
-      margin: 2rem 0;
-    }
+    .service-gallery { margin: 2rem 0; }
     .gallery-title {
       font-size: 1rem;
       color: var(--ink-light);
       text-align: center;
       margin-bottom: 1rem;
-      font-weight: normal;
     }
     .gallery-grid {
       display: grid;
@@ -66,69 +63,30 @@
       transform: scale(1.04);
       box-shadow: 0 4px 16px rgba(45,106,79,0.2);
     }
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.88);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 80vh;
+    .article-source {
+      margin-top: 2rem;
+      padding: 1rem 1.2rem;
+      background: #f7f9f6;
       border-radius: 8px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-    }
-    .lightbox-caption {
-      color: #fff;
-      margin-top: 0.8rem;
       font-size: 0.9rem;
-      opacity: 0.8;
+      color: var(--ink-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
+    .article-source::before { content: '📋'; }
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; flex-direction: column; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 80vh; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .lightbox-caption { color: #fff; margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8; }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; color: #fff; font-size: 2rem; cursor: pointer; opacity: 0.7; transition: opacity 0.2s; }
     .lightbox-close:hover { opacity: 1; }
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #fff;
-      font-size: 2.5rem;
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity 0.2s;
-      padding: 0 16px;
-      user-select: none;
-      background: none;
-      border: none;
-    }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; font-size: 2.5rem; cursor: pointer; opacity: 0.5; transition: opacity 0.2s; padding: 0 16px; user-select: none; background: none; border: none; }
     .lightbox-nav:hover { opacity: 1; }
     .lightbox-prev { left: 10px; }
     .lightbox-next { right: 10px; }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--jade);
-      text-decoration: none;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      transition: gap 0.2s;
-    }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--jade); text-decoration: none; font-size: 0.95rem; margin-bottom: 1.5rem; transition: gap 0.2s; }
     .back-link:hover { gap: 0.8rem; }
     @media (max-width: 768px) {
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
@@ -161,51 +119,46 @@
     <h1 class="section-title" style="font-size:1.6rem;text-align:left;">便民服务日，温暖进乡村</h1>
 
     <div class="article-meta">
-      <span>📅 2026年5月26日</span>
+      <span>📅 2026年4月25日</span>
       <span>📍 仁家坪新村村委会</span>
-      <span>✍️ 仁家坪新村村委会</span>
+      <span>✍️ 通讯组 赵买云</span>
     </div>
 
     <img class="article-hero" src="../images/service-day-poster.jpg" alt="便民服务日活动现场">
 
     <div class="article-body">
-      <p>初夏时节，暖意融融。仁家坪新村村委会大院内人头攒动、热闹非凡——这一天，"便民服务日"活动如期而至，将贴心服务送到村民家门口，把温暖送进千家万户。</p>
-
-      <h2>领导致辞，寄语民生</h2>
-      <p>活动在雄壮的氛围中拉开帷幕。村党总支部书记邓斌在致辞中表示，民生无小事，枝叶总关情。便民服务日是村"两委"践行为民宗旨、办好民生实事的重要举措，今后将持续深化，让每一位村民都能感受到党和政府的关怀与温暖。</p>
+      <p>4月25日，初春时节，暖意融融。仁家坪新村村委会大院内人头攒动、热闹非凡——这一天，每月一次的"便民服务日"活动如期而至，将贴心服务送到村民家门口，把温暖送进千村万户。</p>
 
       <h2>多元服务，诚意满满</h2>
       <p>活动现场设立了多个服务展位，涵盖便民缝纫、健康义诊、免费理发等贴近村民生活需求的服务内容。工作人员与志愿者们各司其职，热情接待每一位到来的村民，用实际行动诠释着"奉献、友爱、互助、进步"的志愿精神。</p>
-      <p>在便民缝纫服务台前，志愿者熟练地操作着缝纫机，为村民缝补衣物、修整裤脚，收费低廉却服务周到；在健康义诊区，医护人员耐心为老人们测量血压、检测血糖，一一记录数据，并给出科学的健康建议；在免费理发点前，理发师手艺娴熟、精神抖擞，前来理发的老人们理完发后精神面貌焕然一新，连连称赞。</p>
+      <p>在便民缝纫服务台前，志愿者<strong>邓水莲</strong>老师熟练地操作着缝纫机，为村民缝补衣物、修整裤脚，服务周到；在健康义诊区，志愿者<strong>王英</strong>耐心为老人们测量血压、测血糖，一一记录数据，并给出科学的健康建议；在免费理发点前，理发师<strong>刘双南</strong>手艺娴熟、精神抖擞，前来理发的乡亲们理完发后精神面貌焕然一新，连连称赞。</p>
 
       <h2>志愿力量，温暖人心</h2>
-      <p>活动现场，身着"邵东"字样红马甲的志愿者们格外引人注目。他们穿梭于各个服务台之间，或帮助老人填写资料，或搀扶行动不便者落座，或为等候的村民递上一杯热茶……每一个忙碌的身影，都是乡村文明最生动的注脚。"我们志愿者便民日，就是想实实在在帮大家做点事。"一位女志愿者代表如是说。</p>
+      <p>活动现场，身着"邵东"字样红马甲的志愿者们格外引人注目。他们穿梭于各个服务台之间，或帮助老人们填写资料，或搀扶行动不便者落座，或为等候的村民递上一杯热茶……每一个忙碌的身影，都是乡村文明最生动的注脚。"我们志愿者便民日，就是想实实在在帮大家做点事。"<strong>志愿者刘双南</strong>如是说。</p>
 
       <h2>以心换心，口碑相传</h2>
       <p>"这个便民服务日搞得好！缝纫、量血压、剪头发，全是老百姓用得上的！"一位村民竖起大拇指说，"以前这些事都要跑到镇上去，现在直接到家门口来了，真是太方便了！"活动现场笑声不断、好评如潮，温暖在交谈中传递，在笑容里流淌。</p>
+
+      <p>下一步，仁家坪新村将持续深化便民服务机制，常态化开展志愿服务活动，不断拓宽服务领域、提升服务质量，让便民服务真正成为连接村"两委"与村民之间的连心桥，共建宜居宜业、和美幸福的新农村。</p>
     </div>
 
     <!-- 现场照片集 -->
     <div class="service-gallery">
       <p class="gallery-title">📷 活动现场 · 点击图片可放大</p>
       <div class="gallery-grid" id="galleryGrid">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/Vmo5kM"    alt="便民服务日现场"         data-caption="便民服务日活动现场"                  loading="lazy">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/tgABam"  alt="便民缝纫服务"           data-caption="便民缝纫服务 · 针线间传递温暖"        loading="lazy">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/HubNnI"  alt="健康义诊服务"           data-caption="健康义诊 · 守护村民健康"              loading="lazy">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/bJfSYG"  alt="健康义诊血糖检测"       data-caption="健康义诊 · 测血糖 · 暖心关怀"        loading="lazy">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/kWCjfe"  alt="免费理发服务"           data-caption="免费理发 · 焕然一新"                  loading="lazy">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/ttdb3U"  alt="村支书致辞"             data-caption="村党总支部书记邓斌致辞"              loading="lazy">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/MCPk0A"  alt="志愿者代表发言"         data-caption="志愿者代表发言"                      loading="lazy">
-        <img src="https://jsonproxy.3g.qq.com/urlmapper/3Q1UWr"  alt="便民服务日活动现场"     data-caption="便民服务日 · 温暖进乡村"              loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/Vmo5kM"    alt="便民服务日现场"        data-caption="便民服务日活动现场"              loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/tgABam"  alt="便民缝纫服务"          data-caption="便民缝纫 · 邓水莲老师"          loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/HubNnI"  alt="健康义诊服务"          data-caption="健康义诊 · 测量血压"              loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/bJfSYG"  alt="健康义诊血糖检测"      data-caption="健康义诊 · 测血糖 · 王英"        loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/kWCjfe"  alt="免费理发服务"          data-caption="免费理发 · 刘双南"                loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/ttdb3U"  alt="便民服务日现场"        data-caption="便民服务日 · 温暖进乡村"          loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/MCPk0A"  alt="志愿者代表发言"        data-caption="志愿者代表刘双南发言"            loading="lazy">
+        <img src="https://jsonproxy.3g.qq.com/urlmapper/3Q1UWr"  alt="便民服务日现场"        data-caption="便民服务日 · 村民好评如潮"        loading="lazy">
       </div>
     </div>
 
-    <div class="article-body">
-      <p style="margin-top:1.5rem;">下一步，仁家坪新村将持续深化便民服务机制，常态化开展志愿服务活动，不断拓宽服务领域、提升服务质量，让便民服务真正成为连接村"两委"与村民之间的连心桥，共建宜居宜业、和美幸福的新农村。</p>
-
-      <p style="margin-top:2rem;color:var(--ink-light);font-size:0.92rem;text-indent:0;">
-        🎬 更多精彩，请关注仁家坪新村官方抖音号 <strong>#流泽</strong> <strong>#仁家坪</strong>
-      </p>
+    <div class="article-source">
+      通讯员：赵买云 &nbsp;|&nbsp; 2026年4月25日
     </div>
   </main>
 
@@ -232,7 +185,6 @@
   </footer>
 
   <script>
-    // Lightbox
     var images = Array.from(document.querySelectorAll('.gallery-grid img'));
     var current = 0;
 
@@ -249,19 +201,11 @@
     document.getElementById('lbClose').addEventListener('click', function() {
       document.getElementById('lightbox').classList.remove('active');
     });
-
-    document.getElementById('lbPrev').addEventListener('click', function() {
-      showImage(current - 1);
-    });
-
-    document.getElementById('lbNext').addEventListener('click', function() {
-      showImage(current + 1);
-    });
-
+    document.getElementById('lbPrev').addEventListener('click', function() { showImage(current - 1); });
+    document.getElementById('lbNext').addEventListener('click', function() { showImage(current + 1); });
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target === this) document.getElementById('lightbox').classList.remove('active');
     });
-
     document.addEventListener('keydown', function(e) {
       if (!document.getElementById('lightbox').classList.contains('active')) return;
       if (e.key === 'ArrowLeft') showImage(current - 1);
