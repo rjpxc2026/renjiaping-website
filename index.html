@@ -670,9 +670,10 @@
     
     /* Section visual separation on mobile - alternating backgrounds */
     #news { background: var(--cream); margin: 0 -1rem; padding: 3rem 1rem; }
-    #village-history { background: var(--parchment); margin: 0 -1rem; padding: 3rem 1rem; }
-    #committee { background: var(--cream); margin: 0 -1rem; padding: 3rem 1rem; }
-    #contact { background: var(--parchment); margin: 0 -1rem; padding: 3rem 1rem; }
+    #gallery { background: var(--parchment); margin: 0 -1rem; padding: 3rem 1rem; }
+    #village-history { background: var(--cream); margin: 0 -1rem; padding: 3rem 1rem; }
+    #committee { background: var(--parchment); margin: 0 -1rem; padding: 3rem 1rem; }
+    #contact { background: var(--cream); margin: 0 -1rem; padding: 3rem 1rem; }
     
     /* About Section */
     .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -1063,6 +1064,7 @@
     <ul class="nav-links">
       <li><a href="#about">村情简介</a></li>
       <li><a href="#news">新闻动态</a></li>
+      <li><a href="#gallery">村貌掠影</a></li>
       <li><a href="#village-history">村史渊源</a></li>
       <li><a href="#committee">村支两委</a></li>
       <li><a href="#contact">联系我们</a></li>
@@ -1076,6 +1078,7 @@
   <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="关闭菜单">×</button>
   <a href="#about" onclick="toggleMobileMenu()">村情简介</a>
   <a href="#news" onclick="toggleMobileMenu()">新闻动态</a>
+  <a href="#gallery" onclick="toggleMobileMenu()">村貌掠影</a>
   <a href="#village-history" onclick="toggleMobileMenu()">村史渊源</a>
   <a href="#committee" onclick="toggleMobileMenu()">村支两委</a>
   <a href="#contact" onclick="toggleMobileMenu()">联系我们</a>
@@ -1153,7 +1156,17 @@
         <div class="honor-badge">👴 长寿村</div>
       </div>
     </div>
-    <div class="gallery-title">📸 村貌掠影</div>
+  </div>
+</section>
+
+<!-- 村貌掠影 -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">GALLERY</p>
+      <h2 class="section-title">村貌掠影</h2>
+      <div class="section-line"></div>
+    </div>
     <div class="gallery-grid" id="villageGallery">
       <div class="gallery-item gallery-large" onclick="openLightbox(0)">
         <img src="images/carousel-spring.jpg" alt="春日村景">
@@ -1243,7 +1256,6 @@
         <img src="images/DJI_0420.JPG" alt="村容新貌">
         <div class="gallery-caption">村容新貌</div>
       </div>
-    </div>
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
       <button class="lightbox-close" aria-label="关闭">×</button>
@@ -1253,7 +1265,6 @@
         <img id="lightboxImg" src="" alt="">
         <div class="lightbox-caption" id="lightboxCaption"></div>
       </div>
-    </div>
     </div>
   </div>
 </section>
