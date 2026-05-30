@@ -1,0 +1,483 @@
+/* ============================================
+   仁家坪新村 - 绿色生态风格 (eco-style.css)
+   淡雅米色/绿色主题
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --eco-green: #4a7c59;
+    --eco-green-dark: #3a6247;
+    --eco-green-light: #6b9b78;
+    --eco-cream: #f8f5ef;
+    --eco-beige: #efeadd;
+    --eco-gold: #b89a5c;
+    --text-dark: #2c2c2c;
+    --text-gray: #555;
+    --text-light: #888;
+    --border-color: #e0d8c8;
+    --shadow: 0 2px 10px rgba(74, 124, 89, 0.1);
+}
+
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", "Noto Serif SC", serif;
+    color: var(--text-dark);
+    background: var(--eco-cream);
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== 顶部栏 ===== */
+.top-bar {
+    background: var(--eco-cream);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    padding: 6px 0;
+    color: var(--text-gray);
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== 网站头部 ===== */
+.site-header {
+    background: linear-gradient(to bottom, #fff 0%, var(--eco-cream) 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 25px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 32px;
+    font-weight: normal;
+    color: var(--eco-green-dark);
+    letter-spacing: 6px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.site-title::before {
+    content: '仁';
+    position: absolute;
+    left: -40px;
+    top: -5px;
+    font-size: 48px;
+    color: var(--eco-green);
+    opacity: 0.15;
+    font-family: "KaiTi", "STKaiti", serif;
+}
+
+.site-subtitle {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 4px;
+    letter-spacing: 2px;
+}
+
+.search-box {
+    display: flex;
+    gap: 6px;
+}
+
+.search-input {
+    border: 1.5px solid var(--border-color);
+    border-radius: 4px;
+    padding: 7px 14px;
+    font-size: 14px;
+    width: 220px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus { border-color: var(--eco-green-light); }
+
+.search-btn {
+    background: var(--eco-green);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 18px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.search-btn:hover { background: var(--eco-green-dark); }
+
+/* ===== 主导航 ===== */
+.main-nav {
+    background: var(--eco-green);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(74, 124, 89, 0.2);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.nav-list li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-list li a:hover,
+.nav-list li.active a {
+    background: rgba(255, 255, 255, 0.15);
+    border-bottom-color: #fff;
+}
+
+/* ===== 横幅 - 绿色生态风格 ===== */
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #e8ede4 0%, var(--eco-cream) 60%, #f5f2ea 100%);
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.banner-slide.active { opacity: 1; }
+
+.banner-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* 横幅覆盖层 - 生态风格文字 */
+.banner-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    background: linear-gradient(
+        to bottom,
+        rgba(232, 237, 228, 0.85) 0%,
+        rgba(248, 245, 239, 0.75) 50%,
+        rgba(245, 242, 234, 0.65) 100%
+    );
+    text-align: center;
+    padding: 30px;
+}
+
+.banner-slogan {
+    font-size: 18px;
+    color: var(--eco-gold);
+    letter-spacing: 8px;
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+.banner-slogan span {
+    margin: 0 10px;
+}
+
+.banner-main-title {
+    font-size: 42px;
+    color: var(--eco-green-dark);
+    letter-spacing: 12px;
+    font-weight: normal;
+    margin-bottom: 28px;
+    font-family: "Noto Serif SC", "SimSun", serif;
+}
+
+.banner-desc {
+    max-width: 700px;
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 2;
+    text-indent: 2em;
+    margin-bottom: 8px;
+}
+
+.banner-scroll-hint {
+    margin-top: 35px;
+    font-size: 14px;
+    color: var(--eco-green);
+    animation: bounce 2s infinite;
+}
+
+.banner-scroll-hint::before {
+    content: '↓ ';
+    font-size: 18px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* ===== 走进仁家坪 ===== */
+#about {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    display: inline-block;
+    font-size: 26px;
+    color: var(--eco-green-dark);
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--eco-gold);
+    letter-spacing: 2px;
+}
+
+.about-intro {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 35px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    border-left: 4px solid var(--eco-gold);
+}
+
+.about-intro p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.9;
+    text-indent: 2em;
+}
+
+.data-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.data-card {
+    background: linear-gradient(135deg, #f0ece0, #ffffff);
+    border: 1.5px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.data-card:hover {
+    box-shadow: 0 4px 16px rgba(184, 154, 92, 0.18);
+    transform: translateY(-2px);
+}
+
+.data-card .number {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--eco-green);
+}
+
+.data-card .unit {
+    font-size: 14px;
+    color: var(--eco-green-light);
+}
+
+.data-card .label {
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-top: 4px;
+}
+
+/* ===== 新闻区块 ===== */
+.news-section {
+    padding: 50px 0;
+    background: white;
+}
+
+.news-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.news-block {
+    background: var(--eco-beige);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.news-block h3 {
+    background: linear-gradient(135deg, var(--eco-green) 0%, var(--eco-green-dark) 100%);
+    color: white;
+    padding: 12px 18px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.news-list {
+    list-style: none;
+    padding: 12px 16px;
+}
+
+.news-list li {
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.news-list li:last-child { border-bottom: none; }
+
+.news-list li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s;
+}
+
+.news-list li a:hover { color: var(--eco-green); }
+
+.news-list li a em {
+    font-style: normal;
+    color: var(--eco-green-light);
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ===== 村支两委 ===== */
+#committee {
+    padding: 50px 0;
+    background: linear-gradient(to bottom, #f0ece0, var(--eco-cream));
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.party-block, .villager-block {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.party-block h3, .villager-block h3 {
+    font-size: 18px;
+    color: var(--eco-green-dark);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--eco-gold);
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.member-table th {
+    background: var(--eco-green);
+    color: white;
+    padding: 9px 12px;
+    text-align: left;
+}
+
+.member-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-gray);
+}
+
+.member-table tr:hover td { background: #f5f2ea; }
+
+/* ===== 页脚 ===== */
+.site-footer {
+    background: linear-gradient(135deg, var(--eco-green-dark) 0%, #2a4a36 100%);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 30px 0 20px;
+    text-align: center;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover { color: #fff; }
+
+.footer-copy {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 14px;
+    margin-top: 4px;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+    .header-inner { flex-direction: column; gap: 12px; }
+    .data-cards { grid-template-columns: 1fr; }
+    .news-columns { grid-template-columns: 1fr; }
+    .committee-grid { grid-template-columns: 1fr; }
+    .nav-list { flex-wrap: wrap; }
+    .nav-list li a { padding: 12px 18px; font-size: 14px; }
+    .banner-section { height: 380px; }
+    .banner-main-title { font-size: 30px; letter-spacing: 6px; }
+    .banner-slogan { font-size: 14px; letter-spacing: 4px; }
+    .search-box { width: 100%; }
+    .search-input { width: 100%; }
+}

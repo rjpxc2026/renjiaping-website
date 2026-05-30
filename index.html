@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>仁家坪新村 - 邵东市</title>
-    <link rel="stylesheet" href="shaodong-style.css">
+    <link rel="stylesheet" href="eco-style.css">
 
     <style>
         /* Hide any remaining edit mode UI */
@@ -15,7 +15,7 @@
     </head>
 <body>
 
-    <!-- 顶部蓝色条 -->
+    <!-- 顶部栏 -->
     <div class="top-bar">
         <div class="container top-bar-inner">
             <span>欢迎访问仁家坪新村官方网站</span>
@@ -53,35 +53,22 @@
         </div>
     </nav>
 
-    <!-- 轮播 Banner -->
-    <div class="banner" id="home">
-        <div class="banner-slide active" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(198,40,40,0.6) 0%, rgba(229,57,53,0.6) 100%);">
-            <div class="banner-text">
-                <h2>党建引领 乡村振兴</h2>
-                <p>打造宜居宜业和美乡村</p>
-            </div>
+    <!-- 轮播 Banner - 绿色生态风格 -->
+    <div class="banner-section" id="home">
+        <div class="banner-slider">
+            <div class="banner-slide active" style="background: url('images/aerial-view.jpg') center/cover no-repeat;"></div>
+            <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat;"></div>
+            <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat;"></div>
+            <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat;"></div>
         </div>
-        <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(21,101,192,0.6) 0%, rgba(66,165,245,0.6) 100%);">
-            <div class="banner-text">
-                <h2>生态宜居 绿色发展</h2>
-                <p>守护绿水青山 建设美丽家园</p>
-            </div>
+        <!-- 生态风格文字覆盖层 -->
+        <div class="banner-overlay">
+            <div class="banner-slogan"><span>湘中硒壤</span>·<span>山水赋新</span></div>
+            <h1 class="banner-main-title">仁家坪新村</h1>
+            <p class="banner-desc">融石禾之朴、竹泉之灵、仁家坪之和，合而为一，向阳而生。</p>
+            <p class="banner-desc">湘中丘壑蕴佳壤，富硒山水育芳华。滋养万物的富硒沃土，承载着自然的厚爱与乡土的希望，方寸山河皆藏温柔底蕴，寸寸硒壤尽蓄蓬勃生机，徐徐铺展湘中大地生态优美、产业兴旺、乡风文明的山水新卷。</p>
+            <div class="banner-scroll-hint">走进富硒乡村，感受山水之美</div>
         </div>
-        <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(46,125,50,0.6) 0%, rgba(102,187,106,0.6) 100%);">
-            <div class="banner-text">
-                <h2>产业兴旺 富民强村</h2>
-                <p>特色种植养殖 拓宽致富渠道</p>
-            </div>
-        </div>
-        <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(106,27,154,0.6) 0%, rgba(171,71,188,0.6) 100%);">
-            <div class="banner-text">
-                <h2>乡风文明 和谐幸福</h2>
-                <p>传承优秀传统文化 共建美好精神家园</p>
-            </div>
-        </div>
-        <button class="banner-arrow left" onclick="slideBanner(-1)">‹</button>
-        <button class="banner-arrow right" onclick="slideBanner(1)">›</button>
-        <div class="banner-dots" id="bannerDots"></div>
     </div><!-- 三栏新闻 -->
     <div class="section section-alt" id="news">
         <div class="container">
