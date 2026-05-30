@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仁家坪新村 - 邵东市</title>
+    <link rel="stylesheet" href="gov-style.css">
+
+    <style>
+        /* Hide any remaining edit mode UI */
+        .edit-notice, .edit-button, .edit-mode, [id*="edit"] {
+            display: none !important;
+        }
+    </style>
+    </head>
+<body>
+
+    <!-- 顶部红色条 -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <span>欢迎访问仁家坪新村官方网站</span>
+            
+        </div>
+    </div>
+
+    <!-- 网站头部 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div>
+                <h1 class="site-title">仁家坪新村</h1>
+                <p class="site-subtitle">湖南省邵东市 · 乡村振兴示范村</p>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="搜索...">
+                <button class="search-btn">搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主导航 -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="active"><a href="#home">首页</a></li>
+                <li><a href="#about">走进仁家坪</a></li>
+                <li><a href="#committee">村支两委</a></li>
+                <li><a href="#news">新闻动态</a></li>
+                
+                
+                
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 轮播 Banner -->
+    <div class="banner" id="home">
+        <div class="banner-slide active" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(198,40,40,0.6) 0%, rgba(229,57,53,0.6) 100%);">
+            <div class="banner-text">
+                <h2>党建引领 乡村振兴</h2>
+                <p>打造宜居宜业和美乡村</p>
+            </div>
+        </div>
+        <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(21,101,192,0.6) 0%, rgba(66,165,245,0.6) 100%);">
+            <div class="banner-text">
+                <h2>生态宜居 绿色发展</h2>
+                <p>守护绿水青山 建设美丽家园</p>
+            </div>
+        </div>
+        <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(46,125,50,0.6) 0%, rgba(102,187,106,0.6) 100%);">
+            <div class="banner-text">
+                <h2>产业兴旺 富民强村</h2>
+                <p>特色种植养殖 拓宽致富渠道</p>
+            </div>
+        </div>
+        <div class="banner-slide" style="background: url('images/aerial-view.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(106,27,154,0.6) 0%, rgba(171,71,188,0.6) 100%);">
+            <div class="banner-text">
+                <h2>乡风文明 和谐幸福</h2>
+                <p>传承优秀传统文化 共建美好精神家园</p>
+            </div>
+        </div>
+        <button class="banner-arrow left" onclick="slideBanner(-1)">‹</button>
+        <button class="banner-arrow right" onclick="slideBanner(1)">›</button>
+        <div class="banner-dots" id="bannerDots"></div>
+    </div><!-- 三栏新闻 -->
+    <div class="section section-alt" id="news">
+        <div class="container">
+            <div class="news-grid">
+                <div class="news-column">
+                    <div class="column-header">
+                        <h3>村务要闻</h3></h3>
+                        <a href="javascript:void(0)" class="more-link">更多 &gt;</a>
+                    </div>
+                    <div class="news-featured">
+                        <h4><a href="news-2026-work-deploy.html" style="color:inherit;text-decoration:none;">仁家坪新村召开2026年度工作部署会议</a></h4>
+                        <p>2026年3月20日，村党总支部书记邓斌主持召开年度工作部署会议，全面总结2025年工作成效，明确2026年乡村振兴目标任务。</p>
+                    </div>
+                    <ul class="news-list" id="listImportant">
+                        <li><a href="articles/news-degao-wangzhong-2026.html"><span>流泽镇仁家坪新村举行"德高望重"牌匾颁发仪式</span><em>05-13</em></a></li>
+                        <li><a href="news-road-upgrade.html"><span>荷叶塘片村道改造工程顺利完工通车</span><em>05-18</em></a></li>
+                        <li><a href="articles/news-family-hygiene-2026q1.html"><span>仁家坪新村开展2026年一季度"家庭卫生文明示范户"表彰活动</span><em>04-01</em></a></li>
+                        <li><a href="news-2026-work-deploy.html"><span>仁家坪新村召开2026年度工作部署会议</span><em>03-20</em></a></li>
+                    
+                </div>
+                <div class="news-column">
+                    <div class="column-header">
+                        <h3>公示公告</h3></h3>
+                        <a href="javascript:void(0)" class="more-link">更多 &gt;</a>
+                    </div>
+                    <ul class="news-list notice-list" id="listNotice">
+                </ul>
+                </div>
+                <div class="news-column">
+                    <div class="column-header">
+                        <h3>规划与政策</h3></h3>
+                        <a href="javascript:void(0)" class="more-link">更多 &gt;</a>
+                    </div>
+                    <ul class="news-list" id="listPolicy">
+                        <li><a href="articles/policy-shiwu5.html">仁家坪新村十五五规划方案（2026-2030年）（讨论初审稿）</a> <span class="date">2026-03</span></li>
+                        <li><a href="articles/policy-xcjj.html">乡村振兴促进法重点内容重点内容</span><em>02-20</em></a></li>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 走进仁家坪 -->
+    <div class="section" id="about" style="background: white; padding: 60px 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title" style="text-align: center; color: #c7000a; font-size: 32px; margin-bottom: 40px;">走进仁家坪</h2>
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start;">
+                <div>
+                    <p style="line-height: 2; font-size: 16px; color: #555; margin-bottom: 15px; text-indent: 2em;">
+                        仁家坪新村位于流泽西南方向，土地总面积4.5平方公里，距离流泽镇4500米、市中心34000米。
+                    </p>
+                    <p style="line-height: 2; font-size: 16px; color: #555; margin-bottom: 15px; text-indent: 2em;">
+                        全村共有31个组，常住人口3460人。交通便利，自然生态环境优美。
+                    </p>
+                    <p style="line-height: 2; font-size: 16px; color: #555; margin-bottom: 15px; text-indent: 2em;">
+                        近年来，在党的领导下，全村坚持党建引领、生态优先、产业兴村的发展思路，全面推进乡村振兴，境内山清水秀、田畴沃野，是典型的湘中丘陵乡村。
+                    </p>
+                    <p style="line-height: 2; font-size: 16px; color: #555; margin-bottom: 20px; text-indent: 2em;">
+                        村两委班子团结有力，基层治理规范有序，先后获得"文明村镇""卫生村""平安村"等荣誉称号。
+                    </p>
+                    <a href="village-intro.html" style="display: inline-block; padding: 10px 25px; background: #c7000a; color: white; text-decoration: none; border-radius: 4px; font-size: 15px;">查看更多 →</a>
+                </div>
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 8px;">
+                    <h3 style="color: #c7000a; font-size: 20px; margin-bottom: 20px;">基本数据</h3>
+                    <div style="display: grid; gap: 15px;">
+                        <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #c7000a;">
+                            <div style="font-size: 24px; font-weight: bold; color: #c7000a; margin-bottom: 5px;">4.5 km²</div>
+                            <div style="font-size: 14px; color: #666;">土地总面积</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #c7000a;">
+                            <div style="font-size: 24px; font-weight: bold; color: #c7000a; margin-bottom: 5px;">31 个</div>
+                            <div style="font-size: 14px; color: #666;">村民小组</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #c7000a;">
+                            <div style="font-size: 24px; font-weight: bold; color: #c7000a; margin-bottom: 5px;">3460 人</div>
+                            <div style="font-size: 14px; color: #666;">常住人口</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>>
+
+    <!-- 村支两委 -->
+    <div class="section" id="committee">
+        <div class="container">
+            <h2 class="section-title">村支两委</h2>
+            <div class="committee-intro" style="text-align:center;max-width:800px;margin:0 auto 32px;font-size:15px;color:#666;line-height:1.8;">
+                仁家坪新村村党支部委员会和村民委员会（简称"村支两委"）是全村的领导核心和自治组织，全心全意为村民服务。
+            </div>
+            <!-- 村党总支（5人） -->
+            <div class="committee-block">
+                <div class="cb-header">
+                    <span class="cb-icon">两</span>
+                    <h3>中共邵东市流泽镇仁家坪新村党总支部</h3>
+                    <span class="cb-count">委员5人</span>
+                </div>
+                <div class="member-grid mg5">
+                    <div class="member-card"><div class="member-avatar"><img src="images/members/dengbin.png?v=134239787809912490" alt="邓斌"></div><div class="member-info"><h4>邓斌</h4><p class="member-role">党总支书记</p></div></div>
+                    <div class="member-card"><div class="member-avatar"><img src="images/members/zengjianrong.png?v=134239787809912490" alt="曾建荣"></div><div class="member-info"><h4>曾建荣</h4><p class="member-role">总支副书记</p></div></div>
+                    <div class="member-card"><div class="member-avatar"><img src="images/members/yinmeiqun.png?v=134239787809912490" alt="尹美群"></div><div class="member-info"><h4>尹美群</h4><p class="member-role">纪检委员</p></div></div>
+                    <div class="member-card"><div class="member-avatar"><img src="images/members/zengweiwei.png?v=134239787809912490" alt="曾魏巍"></div><div class="member-info"><h4>曾魏巍</h4><p class="member-role">组织委员</p></div></div>
+                    <div class="member-card"><div class="member-avatar"><img src="images/members/zhaomaiping.png?v=134239787809912490" alt="赵买平"></div><div class="member-info"><h4>赵买平</h4><p class="member-role">宣传委员</p></div></div>
+                </div>
+            </div>
+            <!-- 村民委员会（6人） -->
+            <div class="committee-block">
+                <div class="cb-header">
+                    <span class="cb-icon">两</span>
+                    <h3>仁家坪新村村民委员会</h3>
+                    <span class="cb-count">委员6人</span>
+                </div>
+                <div class="member-grid mg6 horizontal">
+                    <div class="member-card h-card"><div class="member-avatar"><img src="images/members/dengbin.png?v=134239787809912490" alt="邓斌"></div><div class="member-info"><h4>邓斌</h4><p class="member-role">委员</p><p class="member-desc">主持全面工作</p></div></div>
+                    <div class="member-card h-card"><div class="member-avatar"><img src="images/members/zengjianrong.png?v=134239787809912490" alt="曾建荣"></div><div class="member-info"><h4>曾建荣</h4><p class="member-role">委员</p><p class="member-desc">分工：统战、国土、民兵、退役军人事务、出纳、报账员、石禾片区</p></div></div>
+                    <div class="member-card h-card"><div class="member-avatar"><img src="images/members/yinmeiqun.png?v=134239787809912490" alt="尹美群"></div><div class="member-info"><h4>尹美群</h4><p class="member-role">委员</p><p class="member-desc">分工：纪检、社会治理、审计、自来水厂、竹泉片区</p></div></div>
+                    <div class="member-card h-card"><div class="member-avatar"><img src="images/members/zhaomaiping.png?v=134239787809912490" alt="赵买平"></div><div class="member-info"><h4>赵买平</h4><p class="member-role">委员</p><p class="member-desc">分工：党建、计生、妇联、文教、卫健、医保、社保、民政、青团、宣传</p></div></div>
+                    <div class="member-card h-card"><div class="member-avatar"><img src="images/members/zengweiwei.png?v=134239787809912490" alt="曾魏巍"></div><div class="member-info"><h4>曾魏巍</h4><p class="member-role">委员</p><p class="member-desc">分工：农业、乡村振兴、安全生产、仁家坪片区</p></div></div>
+                    <div class="member-card h-card"><div class="member-avatar"><img src="images/members/zengliu.png?v=134239787809912490" alt="曾留"></div><div class="member-info"><h4>曾留</h4><p class="member-role">委员</p><p class="member-desc">分工：交通、统计、禁毒、环保环境、森林防火、综治维稳</p></div></div>
+                </div>
+            </div>
+            <!-- 各组组长（31人） -->
+            <div class="committee-block">
+                <div class="cb-header">
+                    <span class="cb-icon">两</span>
+                    <h3>各村民小组组长</h3>
+                    <span class="cb-count">组长31人</span>
+                </div>
+                <div class="group-table-wrap">
+                    <table class="group-table">
+                        <thead><tr><th class="gth-num">序号</th><th class="gth-group">组别</th><th class="gth-name">组长姓名</th><th class="gth-num">序号</th><th class="gth-group">组别</th><th class="gth-name">组长姓名</th></tr></thead>
+                        <tbody id="groupTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 产业发展 -->
+    
+    </div>
+
+    <!-- 乡风文明 -->
+    
+
+    <!-- 便民服务 -->
+    
+
+    <!-- 联系我们 -->
+    <div class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-row"><span class="cr-icon">地</span>pan><span>湖南省邵东市仁家坪新村村民委员会</span></div>
+                    <div class="contact-row"><span class="cr-icon">地</span>pan><span>0739-XXXXXXX</span></div>
+                    <div class="contact-row"><span class="cr-icon">地</span>pan><span>周一至周五 8:30-17:00</span></div>
+                    <div class="contact-row"><span class="cr-icon">地</span>pan><span>rjp_xincun@example.com</span></div>
+                </div>
+                <div class="visitor-box">
+                    <div class="visitor-count">12,345</div>
+                    <div>累计访问量</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="javascript:void(0)">中央人民政府</a>
+                <a href="javascript:void(0)">湖南省人民政府</a>
+                <a href="javascript:void(0)">邵阳市人民政府</a>
+                <a href="javascript:void(0)">邵东市人民政府</a>
+            </div>
+            <p class="copyright">© 2026 仁家坪新村村民委员会 版权所有 | 湘ICP备XXXXXXXX号</p>
+        </div>
+    </footer>
+
+    <!-- 编辑提示 -->
+    
+
+    <script src="gov-script.js"></script>
+</body>
+</html>
